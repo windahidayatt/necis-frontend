@@ -23,6 +23,7 @@ class ProductDetail extends Component {
         return (
             <div>
                 <h4>{this.state.title}</h4>
+                <p>{this.state.body}</p>
             </div>
         );
     }
