@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { GET_LIST_PRODUCT } from '../../../controller/ProductController';
-import { Link } from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import { Link } from 'react-router-dom';
+import { GET_LIST_EVENT } from '../../../controller/EventController';
 import Truncate from 'react-truncate';
-import './css/product-style.css';
+import './css/event-style.css';
 
-class Product extends Component {
+
+class Event extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +15,7 @@ class Product extends Component {
     }
     
     componentDidMount(){
-        GET_LIST_PRODUCT().then(res => {
+        GET_LIST_EVENT().then(res => {
             // console.log(res)
             this.setState({
                 list_product:res
@@ -28,7 +29,7 @@ class Product extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Product - Necis</title>
+                    <title>Event - Necis</title>
                 </Helmet>
 
                 <div className="container-fluid">
@@ -45,42 +46,20 @@ class Product extends Component {
                                                     {u.title}
                                                 </Truncate>
                                             </p>
-                                            <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                            <Link to={`/event/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
                                         </div>
                                 </div>
                             </div>
                         )}
                     </div>
                 </div>
-                
-                
-                {/* <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">User ID</th>
-                            <th scope="col">ID</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.list_product.map((u, index) =>
-                            <tr>
-                                <th scope="row">{index+1}</th>
-                                <td>{u.userId}</td>
-                                <td>{u.id}</td>
-                                <td>{u.title}</td>
-                                <td>
-                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
-                                </td>
-                            </tr>
-                        )}
-                    </tbody>
-                </table> */}
+
+                {/* Content */}
+                {/* <h3>ini list event</h3> */}
+
             </div>
         );
     }
 }
 
-export default Product;
+export default Event;

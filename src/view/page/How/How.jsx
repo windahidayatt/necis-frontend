@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 
-class Profile extends Component {
+class How extends Component {
     render() {
         return (
             <div>
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>About - Necis</title>
+                    <title>How? - Necis</title>
                 </Helmet>
 
                 {/* Content */}
-                <h1>Profile NECIS</h1>
+                <h3>How necis deliver your danus?</h3>
             </div>
         );
     }
 }
 
-export default Profile;
+export default How;

@@ -9,6 +9,11 @@ import Home from '../view/page/Home/Home';
 import Profile from '../view/page/Profile/Profile';
 import Product from '../view/page/Product/Product';
 import ProductDetail from '../view/page/Product/ProductDetail';
+import Event from '../view/page/Event/Event';
+import EventDetail from '../view/page/Event/EventDetail';
+import How from '../view/page/How/How';
+import Login from '../view/page/Login/Login';
+import SignUp from '../view/page/SignUp/SignUp';
 
 const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
     <Router>
@@ -17,6 +22,7 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
                 
                 {/* Home Route */}
                 <PublicRoute exact path="/" component={Home} />
+                
 
                 {/* Profile Route */}
                 <PublicRoute path="/profile" component={Profile} />
@@ -25,6 +31,18 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
                 <PublicRoute exact path="/product" component={Product} />
                 <PublicRoute path="/product/detail/:id" component={ProductDetail} />
 
+                {/* Event Route */}
+                <PublicRoute exact path="/event" component={Event} />
+                <PublicRoute path="/event/detail/:id" component={EventDetail} />
+
+                {/* How Route */}
+                <PublicRoute path="/how" component={How} />
+
+                {/* Sign In Route */}
+                <PublicRoute path="/login" component={Login} />
+
+                {/* Sign Up Route */}
+                <PublicRoute path="/sign-up" component={SignUp}/>
                 
             </Switch>
         </div>

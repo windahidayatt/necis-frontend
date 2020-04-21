@@ -1,3 +1,45 @@
+
 .bg-custom{
-    background-color: rgb(125, 23, 184);
+    background-color: #49654E;
+}
+
+.bg-custom-2{
+    background-color: rgb(253, 201, 89);
+}
+
+.custom-position{
+    float:right !important;
+    margin-top: 15px;
+}
+
+.custom-menu-item > a {
+    font-size: 11pt;
+}
+
+.custom-logo{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.navbar-nav li a{
+    text-align: right;
+}
+
+
+body { 
+    padding-top: 100px; 
+}
+
+.menu-item {
+    margin-right: 20px;
+    font-size: 1.3em;
+}
+
+@media only screen and (max-width: 765px){
+    body { 
+        padding-top: 85px; 
+    }
+}
+
+.navbar-custom {
+    padding: 0 !important;
 }
