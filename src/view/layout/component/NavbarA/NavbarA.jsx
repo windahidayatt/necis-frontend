@@ -8,7 +8,7 @@ class NavbarA extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-md navbar-dark bg-custom fixed-top">
+                <nav className="navbar navbar-expand-md navbar-light navbar-custom">
                     <Link to='/' className="navbar-brand mb-0 h1" >
                         <img src={logo} width="60" height="60" className="d-inline-block align-top rounded-circle" alt=""></img>
                     </Link>
@@ -59,14 +59,14 @@ class NavbarA extends Component {
                             <div className="input-group">
                                 <input type="text" className="form-control border-dark" placeholder="Search"></input>
                                 <div className="input-group-append">
-                                    <button className="btn btn-outline-secondary" type="button"><i className="fa fa-search" aria-hidden="true"></i></button>
+                                    <button className="btn btn-primary" type="button"><i className="fa fa-search" aria-hidden="true"></i></button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </nav>
-
             </div>
+
         );
     }
 }

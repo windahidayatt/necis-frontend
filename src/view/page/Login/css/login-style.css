@@ -1,4 +1,18 @@
-.card-login{
-    margin: 0 auto;
-    align-items: center;
+
+.card-title{
+    text-align: center;
+}
+
+@media only screen and (min-width: 765px){
+    .container-login{
+        max-width: 600px;
+    }
+}
+
+.link1-custom{
+    float: left;
+}
+
+.link2-custom{
+    float: right;
 }
