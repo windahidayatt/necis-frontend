@@ -15,9 +15,9 @@ class Login extends Component {
 
                 {/* Content */}
                 <div className="container-fluid container-login">
-                    <div className="row">
+                    <div className="row mt-5">
                         <div className="col-lg-12 margin-content">
-                            <div class="card card-login mt-4 mb-4">
+                            <div class="card card-login mt-5 mb-5">
                                 <div class="card-body">
                                     <h3 className="card-title mb-4">Login</h3>
                                     <form>
@@ -27,7 +27,7 @@ class Login extends Component {
                                         <div class="form-group">
                                             <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
                                         </div>
-                                        <button type="submit" className="btn btn-success btn-lg btn-block mt-4">Login</button>
+                                        <button type="submit" className="btn btn-primary btn-lg btn-block mt-4">Login</button>
                                         <Link to='/login' className="link1-custom mt-3">Login as a store</Link>
                                         <Link to='/login' className="link2-custom mt-3">Forgot Password?</Link>
                                     </form>

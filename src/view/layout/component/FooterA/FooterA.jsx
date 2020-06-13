@@ -27,7 +27,7 @@ class FooterA extends Component {
                 <div class="col-md-5 mb-md-0">
                     <h3 class="footer-heading mb-4 text-white">ABOUT NECIS</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                    <p><a href="{{route('about')}}" class="btn btn-primary text-white px-4">Read more...</a></p>
+                    <p><a href="{{route('about')}}" class="btn btn-secondary px-4">Read more...</a></p>
                 </div>
                 <div class="col-md-4 mb-md-0">
                     <div class="row mb-4">

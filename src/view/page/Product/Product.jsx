@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import Truncate from 'react-truncate';
 import './css/product-style.css';
+import CoverA from '../../layout/component/CoverA/CoverA';
 
 class Product extends Component {
     constructor(props) {
@@ -31,14 +32,15 @@ class Product extends Component {
                     <title>Product - Necis</title>
                 </Helmet>
 
-                <div className="container-fluid">
+                <CoverA name="Products" info="Best products only for you!"/>
+
+                {/* <div className="container-fluid">
                     <div className="row" style={{ marginTop : "10px" }}>
                         {this.state.list_product.map((u, index) =>
                             <div className="col-lg-3">
                                 <div class="card card-custom h-10">
                                     <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
                                         <div class="card-body">
-                                            
                                             <h5 class="card-title">{u.id}</h5>
                                             <p class="card-text">
                                                 <Truncate lines={1} ellipsis={""}>
@@ -51,8 +53,115 @@ class Product extends Component {
                             </div>
                         )}
                     </div>
-                </div>
+                </div> */}
                 
+                <section id="tabs">
+                    <div class="container">
+                        <div class="row mt-4">
+                            <div class="col-xs-12 ">
+                                <nav>
+                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                        <a class="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">All</a>
+                                        <a class="nav-item nav-link" id="nav-fnb-tab" data-toggle="tab" href="#nav-fnb" role="tab" aria-controls="nav-fnb" aria-selected="false">Food & Beverage</a>
+                                        <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
+                                    </div>
+                                </nav>
+                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                                        <div class="container popular-items">
+                                            <div class="row mt-4">
+                                                {/* {this.state.list_product.map((u, index) =>
+                                                    <div className="col-lg-3">
+                                                        <div class="card card-custom h-10">
+                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">{u.id}</h5>
+                                                                    <p class="card-text">
+                                                                        <Truncate lines={1} ellipsis={""}>
+                                                                            {u.title}
+                                                                        </Truncate>
+                                                                    </p>
+                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                )} */}
+                                                {this.state.list_product.map((u, index) =>
+                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div class="single-popular-items mb-50 text-center">
+                                                            <div class="popular-img">
+                                                                <img src="https://via.placeholder.com/150x150" alt="{`Card${index}`}"></img>
+                                                                <div class="img-cap">
+                                                                    {/* <span>Details</span> */}
+                                                                    <span><Link to={`/product/detail/${u.id}`} class="link-custom">Detail</Link></span>
+                                                                </div>
+                                                                {/* <div class="favorit-items">
+                                                                    <span class="flaticon-heart"></span>
+                                                                </div> */}
+                                                            </div>
+                                                            <div class="popular-caption">
+                                                                <h3><a href="product_details.html">
+                                                                    <Truncate lines={1} ellipsis={""}>
+                                                                            {u.title}
+                                                                    </Truncate></a></h3>
+                                                                <span>Rp{u.id}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )}                        
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-fnb" role="tabpanel" aria-labelledby="nav-fnb-tab">       
+                                        <div class="container">
+                                            <div class="row mt-4">
+                                                {this.state.list_product.map((u, index) =>
+                                                    <div className="col-lg-3">
+                                                        <div class="card card-custom h-10">
+                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">{u.id}</h5>
+                                                                    <p class="card-text">
+                                                                        <Truncate lines={1} ellipsis={""}>
+                                                                            {u.title}
+                                                                        </Truncate>
+                                                                    </p>
+                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab"> 
+                                        <div class="container">
+                                            <div class="row mt-4">
+                                                {this.state.list_product.map((u, index) =>
+                                                    <div className="col-lg-3">
+                                                        <div class="card card-custom h-10">
+                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
+                                                                <div class="card-body">
+                                                                    <h5 class="card-title">{u.id}</h5>
+                                                                    <p class="card-text">
+                                                                        <Truncate lines={1} ellipsis={""}>
+                                                                            {u.title}
+                                                                        </Truncate>
+                                                                    </p>
+                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>                
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 
                 {/* <table class="table">
                     <thead>

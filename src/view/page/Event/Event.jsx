@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { GET_LIST_EVENT } from '../../../controller/EventController';
 import Truncate from 'react-truncate';
 import './css/event-style.css';
-
+import CoverA from '../../layout/component/CoverA/CoverA';
 
 class Event extends Component {
     constructor(props) {
@@ -32,9 +32,11 @@ class Event extends Component {
                     <title>Event - Necis</title>
                 </Helmet>
 
+                <CoverA name="Events" info="Nearest events this year!"/>
+
                 <div className="container-fluid">
-                    <div className="row" style={{ marginTop : "10px" }}>
-                        {this.state.list_product.map((u, index) =>
+                    <div className="row mt-4">
+                        {/* {this.state.list_product.map((u, index) =>
                             <div className="col-lg-3">
                                 <div class="card card-custom h-10">
                                     <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
@@ -50,7 +52,22 @@ class Event extends Component {
                                         </div>
                                 </div>
                             </div>
+                        )} */}
+                        {this.state.list_product.map((u, index) =>
+                            <div class="col-md-6 col-lg-4 col-6" data-aos="fade-up">
+                                <a href="#" class="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
+                                    <img src="https://via.placeholder.com/750x500" alt="Image" class="img-fluid"></img>
+                                    <div class="media-1-content">
+                                        <h3 class="mb-2">{u.id}</h3>
+                                        <span class="category">
+                                            <Truncate lines={1} ellipsis={""}>
+                                                {u.title}
+                                            </Truncate></span>
+                                    </div>
+                                </a>
+                            </div>
                         )}
+                        
                     </div>
                 </div>
 

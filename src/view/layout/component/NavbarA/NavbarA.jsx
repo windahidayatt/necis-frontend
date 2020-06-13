@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './css/navbar_a-style.css';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import '../../../../../node_modules/font-awesome/css/font-awesome.min.css'; 
-import logo from './assets/logo-necis.jpeg';
+import logo from './assets/logo-necis2.jpeg';
 
 class NavbarA extends Component {
     render() {
@@ -19,23 +19,23 @@ class NavbarA extends Component {
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
-                                <Link to='/' className="nav-link">Home</Link>
+                                <NavLink exact to='/' className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
-                                <Link to='/event' className="nav-link">Event</Link>
+                                <NavLink exact to='/event' className="nav-link">Event</NavLink>
                             </li>
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <Link to='/product' className='nav-link'>Product</Link>
+                                <NavLink to='/product' className='nav-link'>Product</NavLink>
                             </li>
                             <li className="nav-item menu-item" >
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <Link to='/how' className='nav-link'>How?</Link>
+                                <NavLink to='/how' className='nav-link'>How?</NavLink>
                             </li>
                             <li className="nav-item menu-item" >
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <Link to='/profile' className='nav-link'>About</Link>
+                                <NavLink to='/profile' className='nav-link'>About</NavLink>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>

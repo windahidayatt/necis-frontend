@@ -13,15 +13,15 @@
     color: rgba(48, 151, 0, 0.979);
 }
 /* change the link color */
-/* .navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link {
     color: rgba(104, 104, 104, 0.651) !important;
-} */
+}
 /* change the color of active or hovered links */
-/* .navbar-light .nav-item.active .nav-link,
+.navbar-light .nav-item.active .nav-link,
 .navbar-light .nav-item:focus .nav-link,
 .navbar-light .nav-item:hover .nav-link {
     color: rgb(12, 97, 41) !important;
-} */
+}
 .navbar-light .navbar-nav .nav-link{
     color:rgba(37, 37, 37, 0.5) !important;
 }
@@ -36,7 +36,7 @@
     color:rgba(47, 119, 60, 0.9) !important;
     
 }
-    
+
 .custom-position{
     float:right !important;
     margin-top: 15px;
