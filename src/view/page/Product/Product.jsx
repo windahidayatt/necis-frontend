@@ -93,7 +93,7 @@ class Product extends Component {
                                                                 <img src="https://via.placeholder.com/150x150" alt="{`Card${index}`}"></img>
                                                                 <div class="img-cap">
                                                                     {/* <span>Details</span> */}
-                                                                    <span><Link to={`/product/detail/${u.id}`} class="link-custom">Detail</Link></span>
+                                                                    <span><Link to={`/product/detail/${u.id}`} class="link-custom-2">Detail</Link></span>
                                                                 </div>
                                                                 {/* <div class="favorit-items">
                                                                     <span class="flaticon-heart"></span>

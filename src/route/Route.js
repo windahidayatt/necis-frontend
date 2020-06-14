@@ -14,6 +14,7 @@ import EventDetail from '../view/page/Event/EventDetail';
 import How from '../view/page/How/How';
 import Login from '../view/page/Login/Login';
 import SignUp from '../view/page/SignUp/SignUp';
+import Cart from '../view/page/Cart/Cart';
 
 const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
     <Router>
@@ -44,6 +45,9 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
                 {/* Sign Up Route */}
                 <PublicRoute path="/sign-up" component={SignUp}/>
                 
+                {/* Cart Route */}
+                <PublicRoute path="/cart" component={Cart}/>
+
             </Switch>
         </div>
     </Router>

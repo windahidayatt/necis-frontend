@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import './css/profile-style.css';
 import CoverA from '../../layout/component/CoverA/CoverA';
-import member1 from './assets/person_1.jpg';
-import member2 from './assets/person_2.jpg';
-import member3 from './assets/person_3.jpg';
-import member4 from './assets/person_4.jpg';
 import abdul from './assets/abdul.jpg';
 import aris from './assets/aris.jpg';
 import eca from './assets/eca.jpg';
@@ -61,37 +57,37 @@ class Profile extends Component {
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div class="col-lg-4 text-center mb-2" data-aos="fade-up" data-aos-delay="100">
+                            <div class="col-md-4 col-4 text-center mb-2" data-aos="fade-up" data-aos-delay="100">
                                 <img src={aris} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Aris Purnomo</h4>
                                 <span class="d-block mb-4 member-pos">Chief Technology Officer</span>
                             </div>
-                            <div class="col-lg-4 text-center mb-2" data-aos="fade-up" data-aos-delay="200">
+                            <div class="col-md-4 col-4 text-center mb-2" data-aos="fade-up" data-aos-delay="200">
                                 <img src={eca} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Elza Esterina</h4>
                                 <span class="d-block mb-4 member-pos">Chief Executive Officer</span>
                             </div>
-                            <div class="col-lg-4 text-center mb-2" data-aos="fade-up" data-aos-delay="300">
+                            <div class="col-md-4 col-4 text-center mb-2" data-aos="fade-up" data-aos-delay="300">
                                 <img src={lisa} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Nurallisha Rahmanda</h4>
                                 <span class="d-block mb-4 member-pos">Chief Marketing Officer</span>
                             </div>
-                            <div class="col-lg-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-3 col-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
                                 <img src={winda} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Winda Hidayat</h4>
                                 <span class="d-block mb-4 member-pos">Chief Technology Officer</span>
                             </div>
-                            <div class="col-lg-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-3 col-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
                                 <img src={renol} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Renol Hanafi</h4>
                                 <span class="d-block mb-4 member-pos">Chief Technology Officer</span>
                             </div>
-                            <div class="col-lg-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-3 col-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
                                 <img src={ropik} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Rofiq Suhayana</h4>
                                 <span class="d-block mb-4 member-pos">Chief Marketing Officer</span>
                             </div>
-                            <div class="col-lg-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
+                            <div class="col-md-3 col-3 text-center mb-2" data-aos="fade-up" data-aos-delay="400">
                                 <img src={abdul} alt="Image" class="img-fluid rounded w-50 mb-4"></img>
                                 <h4 class="text-uppercase member-name">Abdul Hadi</h4>
                                 <span class="d-block mb-4 member-pos">Chief Marketing Officer</span>

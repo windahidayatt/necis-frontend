@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import './css/home-style.css';
 import tisi from './assets/tisi.png';
@@ -49,7 +50,8 @@ class Home extends Component {
                                 <div class="masthead-subheading lead" data-aos="fade-up"><b>Welcome to NECIS</b></div>
                                 <div class="masthead-heading text-uppercase lead" data-aos="fade-up" data-aos-delay="400">DANUS FOR LYFE</div>
                                 <div class="col-12 text-center mt-5" data-aos="fade-up">
-                                    <a href="#" class="btn btn-secondary btn-md">SHOP NOW</a>
+                                    {/* <a href="#" class="btn btn-secondary btn-md">SHOP NOW</a> */}
+                                    <Link to='/product' className='btn btn-secondary px-4'>SHOP NOW !</Link>
                                 </div> 
                             </div>
                         </div>
@@ -126,7 +128,8 @@ class Home extends Component {
                             </div>
                             {/* END Nearest Event Content */}
                             <div class="col-12 text-center mt-2" data-aos="fade-up">
-                                <a href="#" class="btn btn-primary btn-md">Show All Events</a>
+                                {/* <a href="#" class="btn btn-primary btn-md">Show All Events</a> */}
+                                <Link to='/event' className='btn btn-primary px-4'>Show All Events</Link>
                             </div> 
                         </div>
                     </div>
@@ -214,7 +217,8 @@ class Home extends Component {
                             </div>
                             {/* END BEST SELLER */}
                             <div class="col-12 text-center mt-2" data-aos="fade-up">
-                                <a href="#" class="btn btn-primary btn-md">Show All Products</a>
+                                {/* <a href="#" class="btn btn-primary btn-md">Show All Products</a> */}
+                                <Link to='/product' className='btn btn-primary px-4'>Show All Products</Link>
                             </div> 
                         </div>
                     </div>

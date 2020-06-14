@@ -49,10 +49,13 @@ class NavbarA extends Component {
                     <div className="collapse navbar-collapse w-100 flex-md-column" id="navbarCollapse">
                         <ul className="navbar-nav ml-auto medium mt-0">
                             <li className="nav-item">
-                                <Link to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</Link>
+                                <NavLink to='/cart' className="nav-link"><i className="fa fa-shopping-cart" aria-hidden="true"></i> Cart</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</Link>
+                                <NavLink to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</NavLink>
                             </li>
                         </ul>
                         <form className="form-inline ml-auto mb-2">
