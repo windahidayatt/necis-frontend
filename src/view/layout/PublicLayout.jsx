@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarA from './component/NavbarA/NavbarA';
 import FooterA from './component/FooterA/FooterA';
+import '../../css/main.css';
 
 const PublicLayout = ({children, ...rest}) => {
     return (

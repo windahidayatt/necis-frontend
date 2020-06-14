@@ -1,0 +1,30 @@
+
+.card-title{
+    text-align: center;
+    color: #49654e;
+}
+
+.card-login{
+    background-color: #e9e9e9 !important;
+    padding-top : 2.5em;
+    padding-bottom : 2.5em;    
+}
+
+@media only screen and (min-width: 765px){
+    .container-login{
+        max-width: 600px;
+    }
+}
+
+.link-custom{
+    color : #49654e !important;
+}
+.link-custom:hover{
+    color : #ffbb00 !important;
+}
+.link1-custom{
+    float: left;
+}
+.link2-custom{
+    float: right;
+}

@@ -1,0 +1,80 @@
+/* Button primary */
+.btn-primary {
+    color: #fff !important; 
+    background-color: rgb(73, 101, 78) !important;
+    border-color: rgb(73, 101, 78) !important;
+}
+.btn-primary:hover {
+    color: #fff !important;
+    background-color: rgb(105, 145, 112) !important;
+    border-color: rgb(105, 145, 112) !important;
+}
+.btn-primary:focus, .btn-primary.focus {
+    color: #fff !important;
+    background-color: rgb(71, 109, 78) !important;
+    border-color: rgb(63, 115, 73) !important;
+    box-shadow: 0 0 0 0.2rem rgba(73, 101, 78, 0.568) !important;
+}
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff !important;
+    background-color: rgb(73, 101, 78) !important;
+    border-color: rgb(73, 101, 78) !important;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff !important;
+    background-color: rgb(71, 109, 78) !important;
+    border-color: rgb(63, 115, 73) !important;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(73, 101, 78, 0.568) !important;
+}
+
+/* Button Secondary */
+.btn-secondary {
+    color: rgb(73, 101, 78) !important; 
+    background-color: rgb(255, 210, 90) !important;
+    border-color: rgb(255, 210, 90) !important;
+}
+.btn-secondary:hover {
+    color: rgb(73, 101, 78) !important;
+    background-color: rgb(255, 223, 137) !important;
+    border-color: rgb(255, 223, 137) !important;
+}
+.btn-secondary:focus, .btn-secondary.focus {
+    color: rgb(73, 101, 78) !important;
+    background-color: rgb(255, 204, 65) !important;
+    border-color: rgb(253, 196, 40) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 211, 90, 0.582) !important;
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+    color: rgb(73, 101, 78) !important;
+    background-color: rgb(255, 210, 90) !important;
+    border-color: rgb(255, 210, 90) !important;
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active, .show > .btn-secondary.dropdown-toggle {
+    color: rgb(73, 101, 78) !important;
+    background-color: rgb(255, 204, 65) !important;
+    border-color: rgb(253, 196, 40) !important;
+}
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 211, 90, 0.582) !important;
+}
+
+/* Section style */
+.site-section {
+    padding-top: 2.3em; 
+}
+.h2, h2 {
+    font-size: 2.5rem !important;
+    color : #49654e !important;
+}
+@media (max-width: 960px) {
+    .site-section {
+        padding-top: 1.5em; 
+    }
+    .h2, h2 {
+        font-size: 1.5rem !important;
+    }
+}
+
+

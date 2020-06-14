@@ -1,0 +1,39 @@
+.card-custom{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#tabs{
+    color: #49654e;
+}
+#tabs h6.section-title{
+    color: #49654e;
+}
+
+#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #49654e;
+    background-color: transparent;
+    border-color: transparent transparent #f3f3f3;
+    border-bottom: 4px solid !important;
+    font-size: 20px;
+    font-weight: bold;
+}
+#tabs .nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    color: #49654e;
+    font-size: 20px;
+}
+
+.link-custom-2 {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.link-custom-2:hover {
+    color: white;
+    background-color: transparent;
+    text-decoration: none;
+}
