@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import { Link } from 'react-router-dom';
-import { GET_LIST_EVENT } from '../../../controller/EventController';
+import { GET_LIST_EVENT, GET_IMAGE_EVENT } from '../../../controller/EventController';
 import Truncate from 'react-truncate';
 import './css/event-style.css';
 import CoverA from '../../layout/component/CoverA/CoverA';
@@ -10,15 +10,15 @@ class Event extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list_product:[]
+            list_event:[],
+            pict : GET_IMAGE_EVENT
         }
     }
     
     componentDidMount(){
         GET_LIST_EVENT().then(res => {
-            // console.log(res)
             this.setState({
-                list_product:res
+                list_event:res
             })
         })
     }
@@ -53,15 +53,15 @@ class Event extends Component {
                                 </div>
                             </div>
                         )} */}
-                        {this.state.list_product.map((u, index) =>
+                        {this.state.list_event.map((u, index) =>
                             <div class="col-md-6 col-lg-4 col-6" data-aos="fade-up">
                                 <a href="#" class="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
-                                    <img src="https://via.placeholder.com/750x500" alt="Image" class="img-fluid"></img>
+                                    <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
                                     <div class="media-1-content">
-                                        <h3 class="mb-2">{u.id}</h3>
+                                        <h3 class="mb-2">{u.name}</h3>
                                         <span class="category">
                                             <Truncate lines={1} ellipsis={""}>
-                                                {u.title}
+                                                {u.description}
                                             </Truncate></span>
                                     </div>
                                 </a>

@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {Helmet} from "react-helmet";
+import { GET_LIST_PRODUCT, GET_IMAGE_PRODUCT } from '../../../controller/ProductController';
+import { GET_LIST_EVENT, GET_IMAGE_EVENT } from '../../../controller/EventController';
 import './css/home-style.css';
+import Truncate from 'react-truncate';
 import tisi from './assets/tisi.png';
 import ghks from './assets/ghks.png';
 import kmli from './assets/kmli.png';
@@ -18,8 +21,25 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title : 'Nearest Event'
+            list_event:[],
+            list_product:[],
+            pict_event : GET_IMAGE_EVENT,
+            pict_product : GET_IMAGE_PRODUCT
         }
+    }
+    
+    componentDidMount(){
+        GET_LIST_EVENT().then(res => {
+            this.setState({
+                list_event:res
+            })
+        })
+        GET_LIST_PRODUCT().then(res => {
+            // console.log(res)
+            this.setState({
+                list_product:res
+            })
+        })
     }
     
     render() {
@@ -72,7 +92,7 @@ class Home extends Component {
                         </div>
                         <div class="row mb-3 justify-content-center">
                             {/* Nearest Event Content */}
-                            <div class="col-md-6 col-lg-4 col-6" data-aos="fade-up">
+                            {/* <div class="col-md-6 col-lg-4 col-6" data-aos="fade-up">
                                 <a href="#" class="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
                                     <img src={tisi} alt="Image" class="img-fluid"></img>
                                     <div class="media-1-content">
@@ -125,8 +145,23 @@ class Home extends Component {
                                         <span class="category">Event ini diselenggarakan oleh HMAN</span>
                                     </div>
                                 </a>
-                            </div>
+                            </div> */}
                             {/* END Nearest Event Content */}
+                            {this.state.list_event.map((u, index) =>
+                                index < 6 &&
+                                <div class="col-md-6 col-lg-4 col-6" data-aos="fade-up">
+                                    <a href="#" class="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
+                                        <img src={this.state.pict_event + u.cover} alt="Image" class="img-fluid"></img>
+                                        <div class="media-1-content">
+                                            <h3 class="mb-2">{u.name}</h3>
+                                            <span class="category">
+                                                <Truncate lines={1} ellipsis={""}>
+                                                    {u.description}
+                                                </Truncate></span>
+                                        </div>
+                                    </a>
+                                </div>
+                            )}
                             <div class="col-12 text-center mt-2" data-aos="fade-up">
                                 {/* <a href="#" class="btn btn-primary btn-md">Show All Events</a> */}
                                 <Link to='/event' className='btn btn-primary px-4'>Show All Events</Link>
@@ -147,16 +182,13 @@ class Home extends Component {
                         </div>
                         <div class="row">
                             {/* BEST SELLER */}
-                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
+                            {/* <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
                                 <div class="single-popular-items mb-50 text-center">
                                     <div class="popular-img">
                                         <img src={kripca} alt=""></img>
                                         <div class="img-cap">
                                             <span>Add to cart</span>
                                         </div>
-                                        {/* <div class="favorit-items">
-                                            <span class="flaticon-heart"></span>
-                                        </div> */}
                                     </div>
                                     <div class="popular-caption">
                                         <h3><a href="product_details.html">Kripik Kaca</a></h3>
@@ -171,9 +203,6 @@ class Home extends Component {
                                         <div class="img-cap">
                                             <span>Add to cart</span>
                                         </div>
-                                        {/* <div class="favorit-items">
-                                            <span class="flaticon-heart"></span>
-                                        </div> */}
                                     </div>
                                     <div class="popular-caption">
                                         <h3><a href="product_details.html">Thai Tea</a></h3>
@@ -188,9 +217,6 @@ class Home extends Component {
                                         <div class="img-cap">
                                             <span>Add to cart</span>
                                         </div>
-                                        {/* <div class="favorit-items">
-                                            <span class="flaticon-heart"></span>
-                                        </div> */}
                                     </div>
                                     <div class="popular-caption">
                                         <h3><a href="product_details.html">Risoles</a></h3>
@@ -205,17 +231,37 @@ class Home extends Component {
                                         <div class="img-cap">
                                             <span>Add to cart</span>
                                         </div>
-                                        {/* <div class="favorit-items">
-                                            <span class="flaticon-heart"></span>
-                                        </div> */}
                                     </div>
                                     <div class="popular-caption">
                                         <h3><a href="product_details.html">Dadar Vla</a></h3>
                                         <span>Rp2.000</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                             {/* END BEST SELLER */}
+                            {this.state.list_product.map((u, index) =>
+                                index < 4 &&
+                                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                    <div class="single-popular-items mb-50 text-center">
+                                        <div class="popular-img">
+                                            <img src={this.state.pict_product + u.cover} alt="Image" class="img-fluid"></img>
+                                            <div class="img-cap">
+                                                <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
+                                            </div>
+                                            {/* <div class="favorit-items">
+                                                <span class="flaticon-heart"></span>
+                                            </div> */}
+                                        </div>
+                                        <div class="popular-caption">
+                                            <h3><a href="product_details.html">
+                                                <Truncate lines={1} ellipsis={""}>
+                                                        {u.name}
+                                                </Truncate></a></h3>
+                                            <span>Rp{u.price}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )}    
                             <div class="col-12 text-center mt-2" data-aos="fade-up">
                                 {/* <a href="#" class="btn btn-primary btn-md">Show All Products</a> */}
                                 <Link to='/product' className='btn btn-primary px-4'>Show All Products</Link>

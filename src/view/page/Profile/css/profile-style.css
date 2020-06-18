@@ -4,3 +4,15 @@
 .member-pos{
     color : #49654e !important; 
 }
+
+@media (max-width: 960px) {
+    .member-name{
+        font-size: 0.9rem; 
+    }
+    .member-pos{
+        font-size: 0.7rem; 
+    }
+    .col-md-4 {
+        margin-top: 0em !important;
+    }
+}

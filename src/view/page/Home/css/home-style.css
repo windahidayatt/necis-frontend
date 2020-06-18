@@ -111,7 +111,7 @@
 .media-1 .media-1-content h3 {
     position: relative;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     -webkit-transition: .4s all ease-in-out;
     -o-transition: .4s all ease-in-out;
     transition: .4s all ease-in-out;
@@ -130,7 +130,7 @@
     bottom: -10px;
     visibility: hidden;
     color: #999999;
-    font-size: 13px;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: .2em; 
 }

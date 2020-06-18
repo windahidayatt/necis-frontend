@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GET_LIST_PRODUCT } from '../../../controller/ProductController';
+import { GET_LIST_PRODUCT, GET_IMAGE_PRODUCT } from '../../../controller/ProductController';
 import { Link } from 'react-router-dom';
 import {Helmet} from "react-helmet";
 import Truncate from 'react-truncate';
@@ -10,7 +10,8 @@ class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list_product:[]
+            list_product:[],
+            pict : GET_IMAGE_PRODUCT
         }
     }
     
@@ -66,34 +67,17 @@ class Product extends Component {
                                         <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
                                     </div>
                                 </nav>
-                                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                                <div class="tab-content py-3 px-3 px-sm-0 popular-items" id="nav-tabContent">
                                     <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
-                                        <div class="container popular-items">
+                                        <div class="container">
                                             <div class="row mt-4">
-                                                {/* {this.state.list_product.map((u, index) =>
-                                                    <div className="col-lg-3">
-                                                        <div class="card card-custom h-10">
-                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">{u.id}</h5>
-                                                                    <p class="card-text">
-                                                                        <Truncate lines={1} ellipsis={""}>
-                                                                            {u.title}
-                                                                        </Truncate>
-                                                                    </p>
-                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
-                                                                </div>
-                                                        </div>
-                                                    </div>
-                                                )} */}
                                                 {this.state.list_product.map((u, index) =>
                                                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
                                                         <div class="single-popular-items mb-50 text-center">
                                                             <div class="popular-img">
-                                                                <img src="https://via.placeholder.com/150x150" alt="{`Card${index}`}"></img>
+                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
                                                                 <div class="img-cap">
-                                                                    {/* <span>Details</span> */}
-                                                                    <span><Link to={`/product/detail/${u.id}`} class="link-custom-2">Detail</Link></span>
+                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
                                                                 </div>
                                                                 {/* <div class="favorit-items">
                                                                     <span class="flaticon-heart"></span>
@@ -102,9 +86,9 @@ class Product extends Component {
                                                             <div class="popular-caption">
                                                                 <h3><a href="product_details.html">
                                                                     <Truncate lines={1} ellipsis={""}>
-                                                                            {u.title}
+                                                                            {u.name}
                                                                     </Truncate></a></h3>
-                                                                <span>Rp{u.id}</span>
+                                                                <span>Rp{u.price}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -116,21 +100,28 @@ class Product extends Component {
                                         <div class="container">
                                             <div class="row mt-4">
                                                 {this.state.list_product.map((u, index) =>
-                                                    <div className="col-lg-3">
-                                                        <div class="card card-custom h-10">
-                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">{u.id}</h5>
-                                                                    <p class="card-text">
-                                                                        <Truncate lines={1} ellipsis={""}>
-                                                                            {u.title}
-                                                                        </Truncate>
-                                                                    </p>
-                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                                    u.brand_id == 2 &&
+                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div class="single-popular-items mb-50 text-center">
+                                                            <div class="popular-img">
+                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
+                                                                <div class="img-cap">
+                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
                                                                 </div>
+                                                                {/* <div class="favorit-items">
+                                                                    <span class="flaticon-heart"></span>
+                                                                </div> */}
+                                                            </div>
+                                                            <div class="popular-caption">
+                                                                <h3><a href="product_details.html">
+                                                                    <Truncate lines={1} ellipsis={""}>
+                                                                            {u.name}
+                                                                    </Truncate></a></h3>
+                                                                <span>Rp{u.price}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                )}
+                                                )}    
                                             </div>
                                         </div>
                                     </div>
@@ -138,18 +129,25 @@ class Product extends Component {
                                         <div class="container">
                                             <div class="row mt-4">
                                                 {this.state.list_product.map((u, index) =>
-                                                    <div className="col-lg-3">
-                                                        <div class="card card-custom h-10">
-                                                            <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
-                                                                <div class="card-body">
-                                                                    <h5 class="card-title">{u.id}</h5>
-                                                                    <p class="card-text">
-                                                                        <Truncate lines={1} ellipsis={""}>
-                                                                            {u.title}
-                                                                        </Truncate>
-                                                                    </p>
-                                                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                                    u.brand_id != 2 &&
+                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div class="single-popular-items mb-50 text-center">
+                                                            <div class="popular-img">
+                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
+                                                                <div class="img-cap">
+                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
                                                                 </div>
+                                                                {/* <div class="favorit-items">
+                                                                    <span class="flaticon-heart"></span>
+                                                                </div> */}
+                                                            </div>
+                                                            <div class="popular-caption">
+                                                                <h3><a href="product_details.html">
+                                                                    <Truncate lines={1} ellipsis={""}>
+                                                                            {u.name}
+                                                                    </Truncate></a></h3>
+                                                                <span>Rp{u.price}</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 )}

@@ -25,34 +25,14 @@ class FooterA extends Component {
             // </div>
             <div class="container-fluid site-footer">
             <div class="row">
-                <div class="col-md-5 mb-md-0">
+                <div class="col-md-6 mb-md-0">
                     <h3 class="footer-heading mb-4 text-white">ABOUT NECIS</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                     {/* <p><a href="{{route('about')}}" class="btn btn-secondary px-4">Read more...</a></p> */}
                     <p><Link to='/profile' className='btn btn-secondary px-4'>Read more...</Link></p>
                 </div>
-                <div class="col-md-4 mb-md-0">
-                    <div class="row mb-4">
-                        <div class="col-md-6">
-                            <h3 class="footer-heading mb-4 text-white">QUICK ACCESS</h3>
-                            <ul class="list-unstyled">
-                                <li><a href="{{route('about')}}">EVENT</a></li>
-                                <li><a href="{{route('gallery')}}">PRODUCT</a></li>
-                                <li><a href="{{route('subcompany')}}">HOW?</a></li>
-                                <li><a href="{{route('project')}}">ABOUT</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h3 class="footer-heading mb-4 text-white">NEWS</h3>
-                            <ul class="list-unstyled">
-                                {/* @foreach(App\Model\PostModel::orderBy('created_at', 'desc')->paginate(4) as $key => $value)
-                                    <li><a href="{{route('post.show', $value->id)}}">{{  \Illuminate\Support\Str::limit($value['name'], 15, $end='...')  }}</a></li>
-                                @endforeach */}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
                     <div class="row">
                         <div class="col-md-12"><h3 class="footer-heading mb-4 text-white">CONTACT</h3></div>
                             <div class="col-md-12">
@@ -61,7 +41,7 @@ class FooterA extends Component {
                                     <p class="mb-4">Gegerkalong Hilir Street, Ciwaruga.</p>
                     
                                     <p class="mb-0 font-weight-bold">Telephone</p>
-                                    <p class="mb-4">+62 857-2213-5734 (Lisa)</p>
+                                    <p class="mb-4">+62 877-1424-8000 (Lisa)</p>
                     
                                     <p class="mb-0 font-weight-bold">E-mail</p>
                                     <p class="mb-0">necis.po@gmail.com</p>

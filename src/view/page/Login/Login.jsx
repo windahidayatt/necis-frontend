@@ -14,7 +14,7 @@ class Login extends Component {
                 </Helmet>
 
                 {/* Content */}
-                <div className="container-fluid container-login">
+                <div className="container-fluid container-form">
                     <div className="row mt-5">
                         <div className="col-lg-12 margin-content">
                             <div class="card card-login mt-4 mb-4">
@@ -34,8 +34,7 @@ class Login extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> 
                 </div>        
             </div>
         );
