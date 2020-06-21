@@ -14,18 +14,18 @@ class Login extends Component {
                 </Helmet>
 
                 {/* Content */}
-                <div className="container-fluid container-login">
+                <div className="container-fluid container-form">
                     <div className="row mt-5">
                         <div className="col-lg-12 margin-content">
-                            <div class="card card-login mt-4 mb-4">
-                                <div class="card-body">
+                            <div className="card card-login mt-4 mb-4">
+                                <div className="card-body">
                                     <h3 className="card-title mb-4">Login</h3>
                                     <form>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
+                                        <div className="form-group">
+                                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                                        <div className="form-group">
+                                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
                                         </div>
                                         <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Login</button>
                                         <Link to='/login' className="link-custom link1-custom mt-3">Login as a store</Link>
@@ -34,8 +34,7 @@ class Login extends Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
+                    </div> 
                 </div>        
             </div>
         );

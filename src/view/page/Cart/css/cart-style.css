@@ -1,0 +1,32 @@
+.site-blocks-table {
+    overflow: auto; }
+    .site-blocks-table .product-thumbnail {
+      width: 200px; }
+    .site-blocks-table thead th {
+      padding: 30px;
+      text-align: center;
+      border-width: 1px !important;
+      vertical-align: middle;
+      color: #212529;
+      font-size: 18px;
+      font-weight: normal; }
+    .site-blocks-table td {
+      padding: 15px !important; 
+      text-align: center;
+      vertical-align: middle !important;
+      color: #212529; }
+    .site-blocks-table tbody tr:first-child td {
+      border-top: 1px solid #930077 !important; }
+
+.quantity-td{
+    display: block;
+    margin: auto;
+    max-width : 120px;
+}
+
+@media (max-width: 768px){
+    .quantity-td{
+        display: block;
+        margin: 0;
+    }
+}

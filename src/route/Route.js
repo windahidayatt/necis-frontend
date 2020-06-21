@@ -30,7 +30,7 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
 
                 {/* Product Route */}
                 <PublicRoute exact path="/product" component={Product} />
-                <PublicRoute path="/product/detail/:id" component={ProductDetail} />
+                <PublicRoute path="/product/detail/:slug" component={ProductDetail} />
 
                 {/* Event Route */}
                 <PublicRoute exact path="/event" component={Event} />

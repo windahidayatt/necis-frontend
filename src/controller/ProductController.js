@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { BASE_URL } from '../config/BaseURL';
 
-const GET_API_INDEX_PRODUCT = BASE_URL+'/posts';
-const GET_API_PRODUCT = BASE_URL+'/posts/';
+// const GET_API_INDEX_PRODUCT = BASE_URL+'/posts';
+// const GET_API_PRODUCT = BASE_URL+'/posts/';
+
+// nyoba dr aris
+const GET_API_INDEX_PRODUCT = BASE_URL+'/api/product';
+const GET_API_PRODUCT = BASE_URL+'/api/product/';
+export const GET_IMAGE_PRODUCT = BASE_URL+'/storage/';
 
 export const GET_LIST_PRODUCT = () => {
     return axios
@@ -18,14 +23,14 @@ export const GET_LIST_PRODUCT = () => {
         })
 }
 
-export const GET_PRODUCT = (id) => {
+export const GET_PRODUCT = (slug) => {
     return axios
         // .get(GET_INDEX_PRODUCT,{
         //     headers: { Authorization: `Bearer ${localStorage.usertoken}` }
         // })
-        .get(GET_API_PRODUCT+id)
+        .get(GET_API_PRODUCT+slug)
         .then(response => {
-            return response.data
+            return response.data[0]
         })
         .catch(err => {
             return err.response

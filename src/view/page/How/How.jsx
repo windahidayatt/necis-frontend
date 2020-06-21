@@ -21,55 +21,55 @@ class How extends Component {
 
                 {/* Content */}
                 {/* <h3>How necis deliver your danus?</h3> */}
-                <section class="site-section">
-                    <div class="container">
-                        <div class="row mb-2 justify-content-center">
-                            <div class="col-md-8 text-center">
-                                {/* <h2 class="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 class="h2 text-black site-section-heading text-center"><b>HOW</b> ?</h2>
+                <section className="site-section">
+                    <div className="container">
+                        <div className="row mb-2 justify-content-center">
+                            <div className="col-md-8 text-center">
+                                {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
+                                <h2 className="h2 text-black site-section-heading text-center"><b>HOW</b> ?</h2>
                                 <hr />
-                                <p class="lead">How can I order something from necis?</p>
+                                <p className="lead">How can I order something from necis?</p>
                             </div>
                         </div>
-                        <ul class="timeline">
+                        <ul className="timeline">
                             <li>
-                                <div class="timeline-image"><img class="rounded-circle img-fluid" src={how1} alt="" /></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4 class="subheading">Choose your products</h4>
+                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how1} alt="" /></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4 className="subheading">Choose your products</h4>
                                     </div>
-                                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                                 </div>
                             </li>
-                            <li class="timeline-inverted">
-                                <div class="timeline-image"><img class="rounded-circle img-fluid" src={how2} alt="" /></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4 class="subheading">An Agency is Born</h4>
+                            <li className="timeline-inverted">
+                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how2} alt="" /></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4 className="subheading">An Agency is Born</h4>
                                     </div>
-                                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                                 </div>
                             </li>
                             <li>
-                                <div class="timeline-image"><img class="rounded-circle img-fluid" src={how3} alt="" /></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4 class="subheading">Transition to Full Service</h4>
+                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how3} alt="" /></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4 className="subheading">Transition to Full Service</h4>
                                     </div>
-                                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                                 </div>
                             </li>
-                            <li class="timeline-inverted">
-                                <div class="timeline-image"><img class="rounded-circle img-fluid" src={how4}alt="" /></div>
-                                <div class="timeline-panel">
-                                    <div class="timeline-heading">
-                                        <h4 class="subheading">Phase Two Expansion</h4>
+                            <li className="timeline-inverted">
+                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how4}alt="" /></div>
+                                <div className="timeline-panel">
+                                    <div className="timeline-heading">
+                                        <h4 className="subheading">Phase Two Expansion</h4>
                                     </div>
-                                    <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
+                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
                                 </div>
                             </li>
-                            <li class="timeline-inverted">
-                                <div class="timeline-image">
+                            <li className="timeline-inverted">
+                                <div className="timeline-image">
                                     <h4>Be Part<br />Of Our<br />Story!</h4>
                                 </div>
                             </li>
