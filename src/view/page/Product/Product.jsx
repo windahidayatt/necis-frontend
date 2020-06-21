@@ -39,16 +39,16 @@ class Product extends Component {
                     <div className="row" style={{ marginTop : "10px" }}>
                         {this.state.list_product.map((u, index) =>
                             <div className="col-lg-3">
-                                <div class="card card-custom h-10">
-                                    <img class="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
-                                        <div class="card-body">
-                                            <h5 class="card-title">{u.id}</h5>
-                                            <p class="card-text">
+                                <div className="card card-custom h-10">
+                                    <img className="card-img-top img-fluid" src="https://via.placeholder.com/150x60" alt={`Card${index}`}></img>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{u.id}</h5>
+                                            <p className="card-text">
                                                 <Truncate lines={1} ellipsis={""}>
                                                     {u.title}
                                                 </Truncate>
                                             </p>
-                                            <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                            <Link to={`/product/detail/${u.id}`} className="btn btn-primary btn-block" role="button">Detail</Link>
                                         </div>
                                 </div>
                             </div>
@@ -57,33 +57,33 @@ class Product extends Component {
                 </div> */}
                 
                 <section id="tabs">
-                    <div class="container">
-                        <div class="row mt-4">
-                            <div class="col-xs-12 ">
+                    <div className="container">
+                        <div className="row mt-4">
+                            <div className="col-xs-12 ">
                                 <nav>
-                                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a class="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">All</a>
-                                        <a class="nav-item nav-link" id="nav-fnb-tab" data-toggle="tab" href="#nav-fnb" role="tab" aria-controls="nav-fnb" aria-selected="false">Food & Beverage</a>
-                                        <a class="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
+                                    <div className="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                                        <a className="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">All</a>
+                                        <a className="nav-item nav-link" id="nav-fnb-tab" data-toggle="tab" href="#nav-fnb" role="tab" aria-controls="nav-fnb" aria-selected="false">Food & Beverage</a>
+                                        <a className="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
                                     </div>
                                 </nav>
-                                <div class="tab-content py-3 px-3 px-sm-0 popular-items" id="nav-tabContent">
-                                    <div class="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
-                                        <div class="container">
-                                            <div class="row mt-4">
+                                <div className="tab-content py-3 px-3 px-sm-0 popular-items" id="nav-tabContent">
+                                    <div className="tab-pane fade show active" id="nav-all" role="tabpanel" aria-labelledby="nav-all-tab">
+                                        <div className="container">
+                                            <div className="row mt-4">
                                                 {this.state.list_product.map((u, index) =>
-                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
-                                                        <div class="single-popular-items mb-50 text-center">
-                                                            <div class="popular-img">
-                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
-                                                                <div class="img-cap">
-                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
+                                                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div className="single-popular-items mb-50 text-center">
+                                                            <div className="popular-img">
+                                                                <img src={this.state.pict + u.cover} alt="Image" className="img-fluid"></img>
+                                                                <div className="img-cap">
+                                                                    <span><Link to={`/product/detail/${u.slug}`} className="link-custom-2">Detail</Link></span>
                                                                 </div>
-                                                                {/* <div class="favorit-items">
-                                                                    <span class="flaticon-heart"></span>
+                                                                {/* <div className="favorit-items">
+                                                                    <span className="flaticon-heart"></span>
                                                                 </div> */}
                                                             </div>
-                                                            <div class="popular-caption">
+                                                            <div className="popular-caption">
                                                                 <h3><a href="product_details.html">
                                                                     <Truncate lines={1} ellipsis={""}>
                                                                             {u.name}
@@ -96,23 +96,23 @@ class Product extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-fnb" role="tabpanel" aria-labelledby="nav-fnb-tab">       
-                                        <div class="container">
-                                            <div class="row mt-4">
+                                    <div className="tab-pane fade" id="nav-fnb" role="tabpanel" aria-labelledby="nav-fnb-tab">       
+                                        <div className="container">
+                                            <div className="row mt-4">
                                                 {this.state.list_product.map((u, index) =>
-                                                    u.brand_id == 2 &&
-                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
-                                                        <div class="single-popular-items mb-50 text-center">
-                                                            <div class="popular-img">
-                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
-                                                                <div class="img-cap">
-                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
+                                                    u.brand_id === 2 &&
+                                                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div className="single-popular-items mb-50 text-center">
+                                                            <div className="popular-img">
+                                                                <img src={this.state.pict + u.cover} alt="Image" className="img-fluid"></img>
+                                                                <div className="img-cap">
+                                                                    <span><Link to={`/product/detail/${u.slug}`} className="link-custom-2">Detail</Link></span>
                                                                 </div>
-                                                                {/* <div class="favorit-items">
-                                                                    <span class="flaticon-heart"></span>
+                                                                {/* <div className="favorit-items">
+                                                                    <span className="flaticon-heart"></span>
                                                                 </div> */}
                                                             </div>
-                                                            <div class="popular-caption">
+                                                            <div className="popular-caption">
                                                                 <h3><a href="product_details.html">
                                                                     <Truncate lines={1} ellipsis={""}>
                                                                             {u.name}
@@ -125,23 +125,23 @@ class Product extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab"> 
-                                        <div class="container">
-                                            <div class="row mt-4">
+                                    <div className="tab-pane fade" id="nav-other" role="tabpanel" aria-labelledby="nav-other-tab"> 
+                                        <div className="container">
+                                            <div className="row mt-4">
                                                 {this.state.list_product.map((u, index) =>
-                                                    u.brand_id != 2 &&
-                                                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
-                                                        <div class="single-popular-items mb-50 text-center">
-                                                            <div class="popular-img">
-                                                                <img src={this.state.pict + u.cover} alt="Image" class="img-fluid"></img>
-                                                                <div class="img-cap">
-                                                                    <span><Link to={`/product/detail/${u.slug}`} class="link-custom-2">Detail</Link></span>
+                                                    u.brand_id !== 2 &&
+                                                    <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6 mt-2 mb-2">
+                                                        <div className="single-popular-items mb-50 text-center">
+                                                            <div className="popular-img">
+                                                                <img src={this.state.pict + u.cover} alt="Image" className="img-fluid"></img>
+                                                                <div className="img-cap">
+                                                                    <span><Link to={`/product/detail/${u.slug}`} className="link-custom-2">Detail</Link></span>
                                                                 </div>
-                                                                {/* <div class="favorit-items">
-                                                                    <span class="flaticon-heart"></span>
+                                                                {/* <div className="favorit-items">
+                                                                    <span className="flaticon-heart"></span>
                                                                 </div> */}
                                                             </div>
-                                                            <div class="popular-caption">
+                                                            <div className="popular-caption">
                                                                 <h3><a href="product_details.html">
                                                                     <Truncate lines={1} ellipsis={""}>
                                                                             {u.name}
@@ -161,7 +161,7 @@ class Product extends Component {
                     </div>
                 </section>
                 
-                {/* <table class="table">
+                {/* <table className="table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -179,7 +179,7 @@ class Product extends Component {
                                 <td>{u.id}</td>
                                 <td>{u.title}</td>
                                 <td>
-                                    <Link to={`/product/detail/${u.id}`} class="btn btn-primary btn-block" role="button">Detail</Link>
+                                    <Link to={`/product/detail/${u.id}`} className="btn btn-primary btn-block" role="button">Detail</Link>
                                 </td>
                             </tr>
                         )}
