@@ -3,6 +3,13 @@ import {Link} from 'react-router-dom';
 import './css/footer_a-style.css';
 
 class FooterA extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            about : "Need Acis atau yang lebih dikenal dengan necis adalah salah satu web yang dibuat oleh tim LoudEv JTK POLBAN 2018. Web ini diperuntukan bagi mahasiswa/i polban yang memiliki danus (dana usaha), baik danus organisasi maupun danus pribadi."
+        }
+    }
+    
     render() {
         return (
             // <div>
@@ -27,7 +34,7 @@ class FooterA extends Component {
             <div className="row">
                 <div className="col-md-6 mb-md-0">
                     <h3 className="footer-heading mb-4 text-white">ABOUT NECIS</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <p>{this.state.about}</p>
                     {/* <p><a href="{{route('about')}}" className="btn btn-secondary px-4">Read more...</a></p> */}
                     <p><Link to='/profile' className='btn btn-secondary px-4'>Read more...</Link></p>
                 </div>

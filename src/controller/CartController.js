@@ -3,6 +3,7 @@ import { BASE_URL } from '../config/BaseURL';
 
 // GATAU APA API NYA
 const GET_API_CART= BASE_URL+'/api/cart';
+const GET_API_PRODUCT= BASE_URL+'/api/product';
 
 export const ADD_TO_CART = newItem => {
     return axios
@@ -31,7 +32,7 @@ export const GET_LIST_CART = () => {
         // .get(GET_INDEX_PRODUCT,{
         //     headers: { Authorization: `Bearer ${localStorage.usertoken}` }
         // })
-        .get(GET_API_CART)
+        .get(GET_API_PRODUCT)
         .then(response => {
             console.log(response.data)
             return response.data

@@ -14,7 +14,7 @@ class Profile extends Component {
     constructor() {
         super();
         this.state = {
-            history : "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.",
+            history : "Need Acis atau yang lebih dikenal dengan necis adalah salah satu web yang dibuat oleh tim LoudEv JTK POLBAN 2018. Web ini diperuntukan bagi mahasiswa/i polban yang memiliki danus (dana usaha), baik danus organisasi maupun danus pribadi. Dengan adanya web ini, mahasiswa POLBAN dapat mengetahui produk apa saja yang dijual di POLBN, selauin itu para dosen POLBAN serta mahasiswa polban dapat membeli produk-produk yang dijual melalui NECIS.",
 
         }
     }

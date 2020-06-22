@@ -24,14 +24,14 @@ export const GET_LIST_EVENT = () => {
         })
 }
 
-export const GET_EVENT = (id) => {
+export const GET_EVENT = (slug) => {
     return axios
         // .get(GET_INDEX_PRODUCT,{
         //     headers: { Authorization: `Bearer ${localStorage.usertoken}` }
         // })
-        .get(GET_API_EVENT+id)
+        .get(GET_API_EVENT+slug)
         .then(response => {
-            return response.data
+            return response.data[0]
         })
         .catch(err => {
             return err.response
