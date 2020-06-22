@@ -55,7 +55,7 @@ class Event extends Component {
                         )} */}
                         {this.state.list_event.map((u, index) =>
                             <div className="col-md-6 col-lg-4 col-6" data-aos="fade-up">
-                                <a href="#" className="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
+                                <Link to={`/event/detail/${u.slug}`} className="media-1">
                                     <img src={this.state.pict + u.cover} alt="Image" className="img-fluid"></img>
                                     <div className="media-1-content">
                                         <h3 className="mb-2">{u.name}</h3>
@@ -64,7 +64,7 @@ class Event extends Component {
                                                 {u.description}
                                             </Truncate></span>
                                     </div>
-                                </a>
+                                </Link>
                             </div>
                         )}
                         

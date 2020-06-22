@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import './css/how-style.css';
+import {Link} from 'react-router-dom';
 import CoverA from '../../layout/component/CoverA/CoverA';
 import how1 from './assets/1.jpg';
 import how2 from './assets/2.jpg';
@@ -8,6 +9,20 @@ import how3 from './assets/3.jpg';
 import how4 from './assets/4.jpg';
 
 class How extends Component {
+    constructor(props) {
+        super(props);
+        this.state={
+            question : ["How to sign up?", "How to login?", "How to reset password account?"],
+            answer : [
+                "1. Klik tulisan Register yang berada di sebelah kanan atas layar\n2. Masukkan identitas berupa nama, email aktif, dan password yang akan dipakai\n3. Pada kolom Confirm Password, masukkan ulang password yang akan dipakai\n4. Klik tombol biru yang bertuliskan Register\n5. Selamat! Kamu sudah terdaftar di NECIS",
+                "1. Klik Login yang berada di sebelah kanan atas layar\n2. Masukkan email dan password yang telah didaftarkan\n3. Klik Login Now\n4. Selamat! anda dapat berbelanja di NECIS",
+                "1. Pada tampilan login, dibawah tombol Login now terdapat tulisan I forgot my password\n2. Klik tulisan tersebut\n3. Setelah itu akan ada perintah untuk memasukkan email\n4. Masukkan email anda yang telah terdaftar\n5. Klik tombol Send Password Reset Link\n6. Ikuti langkah-langkah pada pesan yang telah dikirim melalui email."
+            ],
+            howModalCall : "#howModal",
+            howModal : "howModal"
+        }
+    }
+    
     render() {
         return (
             <div>
@@ -17,65 +32,53 @@ class How extends Component {
                     <title>How? - Necis</title>
                 </Helmet>
 
-                <CoverA name="How" info="How to ... ?"/>
+                <CoverA name="How" info="Frequently Asked Question"/>
 
                 {/* Content */}
                 {/* <h3>How necis deliver your danus?</h3> */}
                 <section className="site-section">
                     <div className="container">
-                        <div className="row mb-2 justify-content-center">
-                            <div className="col-md-8 text-center">
-                                {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 className="h2 text-black site-section-heading text-center"><b>HOW</b> ?</h2>
-                                <hr />
-                                <p className="lead">How can I order something from necis?</p>
+                        {this.state.question.map((u, index) =>
+                            <div className="row mb-2 justify-content-center mt-3">
+                                {index % 2 === 0 && 
+                                    
+                                    <div className="col-md-12 text-center how-custom" data-toggle="modal" data-target={this.state.howModalCall+index}>
+                                        <Link className="">
+                                            <h3 className="h3-how">{u}</h3>
+                                        </Link>
+                                    </div>
+                                }
+                                {index % 2 !== 0 &&
+                                    <div className="col-md-12 text-center how-custom-2" data-toggle="modal" data-target={this.state.howModalCall+index}>
+                                        <Link className="">
+                                            <h3 className="h3-how">{u}</h3>
+                                        </Link>
+                                    </div>
+                                }
+                                {/* <!-- Modal --> */}
+                                <div class="modal fade" id={this.state.howModal+index} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">{u}</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {this.state.answer[index]}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <ul className="timeline">
-                            <li>
-                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how1} alt="" /></div>
-                                <div className="timeline-panel">
-                                    <div className="timeline-heading">
-                                        <h4 className="subheading">Choose your products</h4>
-                                    </div>
-                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                                </div>
-                            </li>
-                            <li className="timeline-inverted">
-                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how2} alt="" /></div>
-                                <div className="timeline-panel">
-                                    <div className="timeline-heading">
-                                        <h4 className="subheading">An Agency is Born</h4>
-                                    </div>
-                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how3} alt="" /></div>
-                                <div className="timeline-panel">
-                                    <div className="timeline-heading">
-                                        <h4 className="subheading">Transition to Full Service</h4>
-                                    </div>
-                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                                </div>
-                            </li>
-                            <li className="timeline-inverted">
-                                <div className="timeline-image"><img className="rounded-circle img-fluid" src={how4}alt="" /></div>
-                                <div className="timeline-panel">
-                                    <div className="timeline-heading">
-                                        <h4 className="subheading">Phase Two Expansion</h4>
-                                    </div>
-                                    <div className="timeline-body"><p className="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                                </div>
-                            </li>
-                            <li className="timeline-inverted">
-                                <div className="timeline-image">
-                                    <h4>Be Part<br />Of Our<br />Story!</h4>
-                                </div>
-                            </li>
-                        </ul>
+                        )}
                     </div>
                 </section>
+                
             </div>
         );
     }

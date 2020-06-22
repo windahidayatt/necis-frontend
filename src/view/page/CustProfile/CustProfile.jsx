@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { GET_ACCOUNT } from '../../../controller/CustProfileController';
 import {Helmet} from 'react-helmet';
+import CoverA from '../../layout/component/CoverA/CoverA';
 import './css/cust_profile-style.css';
-
 
 class CustProfile extends Component {
     constructor() {
@@ -32,22 +32,17 @@ class CustProfile extends Component {
     }
     render() {
         return (
-            <div className="container-fluid">
+            <div>
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Your Profile - Necis</title>
                 </Helmet>
             
+                <CoverA name="Your Profile" info="Account info and Order History!"/>
+
                 <section id="tabs" className="site-section  pb-0">
                     <div className="container">
-                        <div className="row mb-2 justify-content-center">
-                            <div className="col-md-8 text-center">
-                                {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 className="h2 text-black site-section-heading text-center">HELLO <b>{this.state.account.name}!</b></h2>
-                                <hr />
-                            </div>
-                        </div>
                         <div className="row justify-content-center">
                             <div className="col-md-10 text-center">
                                 <nav>
