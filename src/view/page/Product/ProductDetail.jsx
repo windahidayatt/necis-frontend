@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './css/product_detail-style.css';
 import { GET_PRODUCT, GET_IMAGE_PRODUCT } from '../../../controller/ProductController';
+import {ADD_TO_CART} from '../../../controller/CartController';
 
 class ProductDetail extends Component {
     constructor(props) {
@@ -12,25 +13,69 @@ class ProductDetail extends Component {
             name:'',
             price:'',
             description:'',
-            pict : GET_IMAGE_PRODUCT
+            pict : GET_IMAGE_PRODUCT,
+            stock : '',
+            qty : '1'
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleAddtoCart = this.handleAddtoCart.bind(this);
+        this.js_btn_minus = this.js_btn_minus.bind(this);
+        this.js_btn_plus = this.js_btn_plus.bind(this);
+
+    }
+    handleChange(event){
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
+
+    handleAddtoCart(event){
+        // console.log("Form submitted" + this.state.name + "" + this.state.email);
+        event.preventDefault();
+
+        const newItem = {
+            id : this.state.id,
+            qty : this.state.qty
+        }
+
+        ADD_TO_CART(newItem).then(res =>{
+            this.props.history.push('/cart');
+        })
+    }
+
+    js_btn_minus(){
+        if(this.state.qty > 1){
+            this.setState({
+                qty : this.state.qty-1
+            });
         }
     }
-    
+    js_btn_plus(){
+        if(this.state.qty < this.state.stock){
+            this.setState({
+                qty : parseInt(this.state.qty)+parseInt('1')
+            });
+        }
+    }
+
     componentDidMount(){
         GET_PRODUCT(this.props.match.params.slug).then(res => {
             console.log(res)
             this.setState({
-                // id:res.id,
+                id:res.id,
                 // title:res.title,
                 // body:res.body
                 // nyoba dari aris
                 name:res.name,
                 price:res.price,
                 description:res.description,
-                cover:res.cover
+                cover:res.cover,
+                stock : res.quantity
             })
         })
     }
+
+    
 
     render() {
         return (
@@ -61,17 +106,17 @@ class ProductDetail extends Component {
                                         <div className="mb-5">
                                             <div className="input-group mb-3" style={{maxWidth: "200px"}}>
                                                 <div className="input-group-prepend">
-                                                <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                <button className="btn btn-primary" type="button" onClick={this.js_btn_minus}>&#8722;</button>
                                                 </div>
-                                                <input type="text" className="form-control text-center border mr-0" value="1" placeholder=""
-                                                aria-label="Example text with button addon" aria-describedby="button-addon1"></input>
+                                                <input type="text" name="qty" className="form-control text-center border mr-0" placeholder=""
+                                                aria-label="Example text with button addon" aria-describedby="button-addon1" value={this.state.qty} onChange={this.handleChange}></input>
                                                 <div className="input-group-append">
-                                                    <button className="btn btn-primary js-btn-plus" type="button">&#43;</button>
+                                                    <button className="btn btn-primary" type="button" onClick={this.js_btn_plus}>&#43;</button>
                                                 </div>
                                             </div>
                                     
                                         </div>
-                                        <a className="btn btn-primary" href="#">Add to Cart</a>               
+                                        <button className="btn btn-primary" onClick={this.handleAddtoCart}>Add to Cart</button>          
                                     </div>
                                 </div>
                             </div>

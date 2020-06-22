@@ -1,5 +1,5 @@
 export const isLogin = () => {
-    if (localStorage.usertoken) {
+    if (localStorage.custtoken) {
         return true;
     }
     return false;

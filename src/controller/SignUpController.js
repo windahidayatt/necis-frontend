@@ -20,12 +20,10 @@ export const SIGNUP_CUSTOMER = newCust => {
             {withCredentials:true}
             )
         .then(response => {
-            // return response.data
-            console.log("registration res", response);
+            return response.data
         })
         .catch(err => {
-            // return err.response
-            console.log("registration error", err);
+            return err.response
         })
 }
 

@@ -1,0 +1,12 @@
+.h4-profile-title{
+    color : #646464 !important;
+    padding-top : 0.6em;
+}
+.h4-profile-value{
+    color : #49654e !important;
+    padding-top : 0.6em;
+}
+.row-profile{
+    background-color: rgba(241, 241, 241, 0.575) !important;
+    border-radius: 10px;
+}

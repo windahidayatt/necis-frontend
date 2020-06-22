@@ -16,6 +16,8 @@ import Login from '../view/page/Login/Login';
 import SignUp from '../view/page/SignUp/SignUp';
 import Cart from '../view/page/Cart/Cart';
 import CustProfile from '../view/page/CustProfile/CustProfile';
+import AuthCust from '../view/page/CustProfile/AuthCust';
+
 
 
 const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
@@ -48,12 +50,14 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
                 <PublicRoute path="/sign-up" component={SignUp}/>
                 
                 {/* Cart Route */}
-                {/* <PublicRoute path="/cart" component={Cart}/> */}
+                <PublicRoute path="/cart" component={Cart}/>
 
-                <CustProfile>
-                    {/* Customer Profile Route */}
-                    <PublicRoute path="/cart" component={Cart}/>
-                </CustProfile>
+                {/* Customer Profile Route */}
+                <PublicRoute path="/cust-profile" component={CustProfile}/>
+
+                {/* <AuthCust>
+                    <PublicRoute path="/cust-profile" component={CustProfile}/>
+                </AuthCust> */}
             </Switch>
         </div>
     </Router>
