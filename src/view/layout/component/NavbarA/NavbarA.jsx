@@ -3,6 +3,7 @@ import './css/navbar_a-style.css';
 import { Link, NavLink } from 'react-router-dom';
 import '../../../../../node_modules/font-awesome/css/font-awesome.min.css'; 
 import logo from './assets/logo-necis2.jpeg';
+import {isLogin} from './../../../../utils/Utils'
 
 class NavbarA extends Component {
     render() {
@@ -52,10 +53,18 @@ class NavbarA extends Component {
                                 <NavLink to='/cart' className="nav-link"><i className="fa fa-shopping-cart" aria-hidden="true"></i> Cart</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink>
+                                {isLogin() ?
+                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</NavLink>
+                                    :
+                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink>
+                                }
                             </li>
                             <li className="nav-item">
-                                <NavLink to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</NavLink>
+                                {isLogin() ?
+                                    <NavLink to='/cust-profile' className='nav-link'><i className="fa fa-user" aria-hidden="true"></i> Profile</NavLink>
+                                    :
+                                    <NavLink to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</NavLink>
+                                }
                             </li>
                         </ul>
                         <form className="form-inline ml-auto mb-2">

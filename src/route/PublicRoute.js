@@ -6,7 +6,7 @@ import { isLogin } from './../utils/Utils';
 const PublicRoute = ({component: Component, ...rest}) => {
     return (
         <Route {...rest} render={matchProps => (
-            isLogin() ? <Redirect to="/dashboard" /> :
+            // isLogin() ? <Redirect to="/dashboard" /> :
             <PublicLayout>
                 <Component {...matchProps} />
             </PublicLayout>

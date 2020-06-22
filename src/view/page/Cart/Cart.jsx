@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
+import { GET_LIST_CART } from '../../../controller/CartController';
 import withSizes from 'react-sizes';
 import './css/cart-style.css';
 import kripca from './assets/kripca.png';
@@ -10,11 +11,22 @@ const mapSizesToProps = ({ width }) => ({
 })
 
 class Cart extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            list_cart:[],
+            // pict : GET_IMAGE_PRODUCT
+        }
+    }
 
-    // logOut() {
-    //     localStorage.removeItem('custtoken');
-    //     this.props.history.push('/login');
-    // }
+    componentDidMount(){
+        GET_LIST_CART().then(res => {
+            // console.log(res)
+            // this.setState({
+            //     list_cart:res
+            // })
+        })
+    }
     
     render() {
         // return <div>{this.props.isMobile ? 'Is Mobile' : 'Is Not Mobile'}</div>
@@ -172,7 +184,7 @@ class Cart extends Component {
                     
                                 <div className="row mb-5">
                                     <div className="col-md-12">
-                                        <button className="btn btn-primary btn-lg btn-block" onclick="window.location='checkout.html'">Proceed To
+                                        <button className="btn btn-primary btn-lg btn-block" onClick='/'>Proceed To
                                         Checkout</button>
                                     </div>
                                 </div>
