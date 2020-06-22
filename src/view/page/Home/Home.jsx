@@ -49,6 +49,7 @@ class Home extends Component {
                 <Helmet>
                     <meta charSet="utf-8" />
                     <title>Home - Necis</title>
+
                 </Helmet>
 
                 {/* Judul biasa */}

@@ -10,6 +10,12 @@ const mapSizesToProps = ({ width }) => ({
 })
 
 class Cart extends Component {
+
+    // logOut() {
+    //     localStorage.removeItem('custtoken');
+    //     this.props.history.push('/login');
+    // }
+    
     render() {
         // return <div>{this.props.isMobile ? 'Is Mobile' : 'Is Not Mobile'}</div>
         return (

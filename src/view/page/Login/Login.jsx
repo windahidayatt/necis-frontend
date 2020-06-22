@@ -2,8 +2,45 @@ import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 import './css/login-style.css';
 import { Link } from 'react-router-dom';
+import {LOGIN_CUSTOMER} from '../../../controller/LoginController';
+
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            email : "",
+            password : "",
+            loginErrors : ""
+        }
+
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+
+    }
+
+    handleChange(event){
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
+
+    handleSubmit(event){
+        // console.log("Form submitted" + this.state.name + "" + this.state.email);
+        event.preventDefault();
+
+        const cust = {
+            email : this.state.email,
+            password : this.state.password
+        }
+
+        LOGIN_CUSTOMER(cust).then(res =>{
+            console.log(res);
+            this.props.history.push('/cart');
+        })
+    }
+
     render() {
         return (
             <div>
@@ -20,12 +57,12 @@ class Login extends Component {
                             <div className="card card-login mt-4 mb-4">
                                 <div className="card-body">
                                     <h3 className="card-title mb-4">Login</h3>
-                                    <form>
+                                    <form onSubmit={this.handleSubmit}>
                                         <div className="form-group">
-                                            <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"></input>
+                                            <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value={this.state.email} onChange={this.handleChange} required></input>
                                         </div>
                                         <div className="form-group">
-                                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"></input>
+                                            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" value={this.state.password} onChange={this.handleChange} required></input>
                                         </div>
                                         <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Login</button>
                                         <Link to='/login' className="link-custom link1-custom mt-3">Login as a store</Link>
