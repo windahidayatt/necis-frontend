@@ -34,7 +34,8 @@ class SignUp extends Component {
             name : this.state.name,
             email : this.state.email,
             status : this.state.status,
-            password : this.state.password
+            password : this.state.password,
+            password_confirmation : this.state.password_confirmation
         }
 
         SIGNUP_CUSTOMER(newCust).then(res =>{

@@ -15,6 +15,7 @@ export const SIGNUP_CUSTOMER = newCust => {
                 email : newCust.email,
                 status : newCust.status,
                 password : newCust.password,
+                password_confirmation : newCust.password_confirmation
             },
             {withCredentials:true}
             )

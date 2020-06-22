@@ -15,6 +15,8 @@ import How from '../view/page/How/How';
 import Login from '../view/page/Login/Login';
 import SignUp from '../view/page/SignUp/SignUp';
 import Cart from '../view/page/Cart/Cart';
+import CustProfile from '../view/page/CustProfile/CustProfile';
+
 
 const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
     <Router>
@@ -46,8 +48,12 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
                 <PublicRoute path="/sign-up" component={SignUp}/>
                 
                 {/* Cart Route */}
-                <PublicRoute path="/cart" component={Cart}/>
+                {/* <PublicRoute path="/cart" component={Cart}/> */}
 
+                <CustProfile>
+                    {/* Customer Profile Route */}
+                    <PublicRoute path="/cart" component={Cart}/>
+                </CustProfile>
             </Switch>
         </div>
     </Router>
