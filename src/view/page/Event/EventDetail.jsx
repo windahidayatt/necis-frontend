@@ -30,7 +30,7 @@ class EventDetail extends Component {
                     <div className="row mb-2 justify-content-center mt-4">
                         <div className="col-md-8 text-center">
                             {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                            <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.name}</b></h2>
+                            <h2 className="h2 text-black site-section-heading text-center"><b className="text-uppercase">{this.state.name}</b></h2>
                             <hr />
                         </div>
                     </div>

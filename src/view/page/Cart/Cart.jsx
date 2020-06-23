@@ -54,8 +54,34 @@ class Cart extends Component {
                                     <img src={kripca}alt="Image" className="img-fluid"></img>
                                 </div>
                                 <div className="col-6">
-                                    <h5 className="cart-product-title text-black">Trius Cabernet France 2011</h5>
-                                    <p>$55.00</p>
+                                    <h5 className="cart-product-title text-black">Kripik Kaca</h5>
+                                    <p>Rp5000.00</p>
+                                    <div className="row mt-4">
+                                        <div className="col-8">
+                                            <div className="input-group mb-3 quantity-td">
+                                                <div className="input-group-prepend">
+                                                    <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                </div>
+                                                    <input type="text" className="form-control text-center border mr-0" value="1" placeholder=""
+                                                    aria-label="Example text with button addon" aria-describedby="button-addon1"></input>
+                                                <div className="input-group-append">
+                                                    <button className="btn btn-primary js-btn-plus" type="button">&#43;</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-4">
+                                            <a href="#" className="btn btn-secondary">X</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row mt-3">
+                                <div className="col-6">
+                                    <img src={risol}alt="Image" className="img-fluid"></img>
+                                </div>
+                                <div className="col-6">
+                                    <h5 className="cart-product-title text-black">Risoles</h5>
+                                    <p>Rp1500.00</p>
                                     <div className="row mt-4">
                                         <div className="col-8">
                                             <div className="input-group mb-3 quantity-td">
@@ -105,9 +131,9 @@ class Cart extends Component {
                                             <img src={kripca}alt="Image" className="img-fluid"></img>
                                         </td>
                                         <td className="product-name">
-                                            <h5 className="cart-product-title text-black">Trius Cabernet France 2011</h5>
+                                            <h5 className="cart-product-title text-black">Kripik Kaca</h5>
                                         </td>
-                                        <td>$55.00</td>
+                                        <td>Rp5000.00</td>
                                         <td>
                                             <div className="input-group quantity-td">
                                                 <div className="input-group-prepend">
@@ -120,7 +146,7 @@ class Cart extends Component {
                                                 </div>
                                             </div>
                                         </td>
-                                        <td>$49.00</td>
+                                        <td>Rp5000.00</td>
                                         <td><a href="#" className="btn btn-primary height-auto btn-sm">X</a></td>
                                     </tr>
                         
@@ -129,9 +155,9 @@ class Cart extends Component {
                                         <img src={risol} alt="Image" className="img-fluid"></img>
                                         </td>
                                         <td className="product-name">
-                                        <h5 className="cart-product-title text-black">Trius Cabernet France 2011</h5>
+                                        <h5 className="cart-product-title text-black">Risol</h5>
                                         </td>
-                                        <td>$49.00</td>
+                                        <td>Rp1500.00</td>
                                         <td>
                                         <div className="input-group quantity-td">
                                             <div className="input-group-prepend">
@@ -145,7 +171,7 @@ class Cart extends Component {
                                         </div>
                         
                                         </td>
-                                        <td>$49.00</td>
+                                        <td>Rp15000.00</td>
                                         <td><a href="#" className="btn btn-primary height-auto btn-sm">X</a></td>
                                     </tr>
                                     </tbody>
@@ -170,7 +196,7 @@ class Cart extends Component {
                                         <span className="text-black">Subtotal</span>
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <strong className="text-black">$230.00</strong>
+                                        <strong className="text-black">Rp6500.00</strong>
                                     </div>
                                 </div>
                                 <div className="row mb-5">
@@ -178,7 +204,7 @@ class Cart extends Component {
                                         <span className="text-black">Total</span>
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <strong className="text-black">$230.00</strong>
+                                        <strong className="text-black">Rp6500.00</strong>
                                     </div>
                                 </div>
                     
