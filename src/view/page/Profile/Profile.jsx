@@ -14,7 +14,7 @@ class Profile extends Component {
     constructor() {
         super();
         this.state = {
-            history : "Need Acis atau yang lebih dikenal dengan necis adalah salah satu web yang dibuat oleh tim LoudEv JTK POLBAN 2018. Web ini diperuntukan bagi mahasiswa/i polban yang memiliki danus (dana usaha), baik danus organisasi maupun danus pribadi. Dengan adanya web ini, mahasiswa POLBAN dapat mengetahui produk apa saja yang dijual di POLBN, selauin itu para dosen POLBAN serta mahasiswa polban dapat membeli produk-produk yang dijual melalui NECIS.",
+            history : "Need Acis atau yang lebih dikenal dengan necis adalah salah satu web yang dibuat oleh tim LoudEv JTK POLBAN 2018. Web ini diperuntukan bagi mahasiswa/i polban yang memiliki danus (dana usaha), baik danus organisasi maupun danus pribadi. Dengan adanya web ini, mahasiswa POLBAN dapat mengetahui produk apa saja yang dijual di POLBAN, selain itu para dosen POLBAN serta mahasiswa polban dapat membeli produk-produk yang dijual melalui NECIS.",
 
         }
     }

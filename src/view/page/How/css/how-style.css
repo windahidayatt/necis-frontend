@@ -31,4 +31,10 @@
 .modal-body{
   white-space: pre-line !important;
 }
+
+.page-link{
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+  color: #49654e !important;
+}
  
