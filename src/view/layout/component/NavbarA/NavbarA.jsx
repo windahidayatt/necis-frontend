@@ -20,23 +20,23 @@ class NavbarA extends Component {
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
-                                <NavLink exact to='/' className="nav-link">Home</NavLink>
+                                <NavLink exact to='/' className="nav-link">Beranda</NavLink>
                             </li>
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a> */}
-                                <NavLink exact to='/event' className="nav-link">Event</NavLink>
+                                <NavLink exact to='/event' className="nav-link">Acara</NavLink>
                             </li>
                             <li className="nav-item menu-item">
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <NavLink to='/product' className='nav-link'>Product</NavLink>
+                                <NavLink to='/product' className='nav-link'>Produk</NavLink>
                             </li>
                             <li className="nav-item menu-item" >
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <NavLink to='/how' className='nav-link'>How?</NavLink>
+                                <NavLink to='/how' className='nav-link'>Bantuan</NavLink>
                             </li>
                             <li className="nav-item menu-item" >
                                 {/* <a className="nav-link" href="#">Profile</a> */}
-                                <NavLink to='/profile' className='nav-link'>About</NavLink>
+                                <NavLink to='/profile' className='nav-link'>Tentang</NavLink>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -50,26 +50,26 @@ class NavbarA extends Component {
                     <div className="collapse navbar-collapse w-100 flex-md-column" id="navbarCollapse">
                         <ul className="navbar-nav ml-auto medium mt-0">
                             <li className="nav-item">
-                                <NavLink to='/cart' className="nav-link"><i className="fa fa-shopping-cart" aria-hidden="true"></i> Cart</NavLink>
+                                <NavLink to='/cart' className="nav-link"><i className="fa fa-shopping-cart" aria-hidden="true"></i> Keranjang</NavLink>
                             </li>
                             <li className="nav-item">
                                 {isLogin() ?
-                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-out" aria-hidden="true"></i> Logout</NavLink>
+                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-out" aria-hidden="true"></i> Keluar</NavLink>
                                     :
-                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Login</NavLink>
+                                    <NavLink to='/login' className="nav-link"><i className="fa fa-sign-in" aria-hidden="true"></i> Masuk</NavLink>
                                 }
                             </li>
                             <li className="nav-item">
                                 {isLogin() ?
-                                    <NavLink to='/cust-profile' className='nav-link'><i className="fa fa-user" aria-hidden="true"></i> Profile</NavLink>
+                                    <NavLink to='/cust-profile' className='nav-link'><i className="fa fa-user" aria-hidden="true"></i> Profil</NavLink>
                                     :
-                                    <NavLink to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Sign Up</NavLink>
+                                    <NavLink to='/sign-up' className='nav-link'><i className="fa fa-user-plus" aria-hidden="true"></i> Daftar</NavLink>
                                 }
                             </li>
                         </ul>
                         <form className="form-inline ml-auto mb-2">
                             <div className="input-group">
-                                <input type="text" className="form-control border-dark" placeholder="Search"></input>
+                                <input type="text" className="form-control border-dark" placeholder="Cari..."></input>
                                 <div className="input-group-append">
                                     <button className="btn btn-primary" type="button"><i className="fa fa-search" aria-hidden="true"></i></button>
                                 </div>

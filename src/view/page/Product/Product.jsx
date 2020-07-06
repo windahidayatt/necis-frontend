@@ -30,10 +30,10 @@ class Product extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Product - Necis</title>
+                    <title>Produk - Necis</title>
                 </Helmet>
 
-                <CoverA name="Products" info="Best products only for you!"/>
+                <CoverA name="Produk" info="Yu beli produk danusan!"/>
 
                 {/* <div className="container-fluid">
                     <div className="row" style={{ marginTop : "10px" }}>
@@ -62,9 +62,9 @@ class Product extends Component {
                             <div className="col-xs-12 ">
                                 <nav>
                                     <div className="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                        <a className="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">All</a>
-                                        <a className="nav-item nav-link" id="nav-fnb-tab" data-toggle="tab" href="#nav-fnb" role="tab" aria-controls="nav-fnb" aria-selected="false">Food & Beverage</a>
-                                        <a className="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Other</a>
+                                        <a className="nav-item nav-link active" id="nav-all-tab" data-toggle="tab" href="#nav-all" role="tab" aria-controls="nav-all" aria-selected="true">Semua</a>
+                                        <a className="nav-item nav-link" id="nav-fnb-tab" data-toggle="tab" href="#nav-fnb" role="tab" aria-controls="nav-fnb" aria-selected="false">Makanan & Minuman</a>
+                                        <a className="nav-item nav-link" id="nav-other-tab" data-toggle="tab" href="#nav-other" role="tab" aria-controls="nav-other" aria-selected="false">Lainnya</a>
                                     </div>
                                 </nav>
                                 <div className="tab-content py-3 px-3 px-sm-0 popular-items" id="nav-tabContent">
