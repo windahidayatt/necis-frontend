@@ -36,8 +36,9 @@ export const POST_ADDRESS = (id,newAddress) => {
                 zip : newAddress.zip,
                 phone : newAddress.phone
             },
-            // {headers: {'X-CSRFToken': `${newAddress._token}` }},
-            {withCredentials:true}
+            // {headers: {'X-CSRF-TOKEN': `${newAddress._token}` }},
+            // {withCredentials:true}
+            {headers: { Authorization: `Bearer ${localStorage.custtoken}` }}
             )
         .then(response => {
             console.log(response)
