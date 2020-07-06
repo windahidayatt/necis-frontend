@@ -12,11 +12,11 @@ class How extends Component {
     constructor(props) {
         super(props);
         this.state={
-            question : ["How to sign up?", "How to login?", "How to reset password account?"],
+            question : ["Bagaimana cara mendaftar?", "Bagaimana cara masuk?", "Bagaimana cara mereset kata sandi?"],
             answer : [
-                "1. Klik tulisan Register yang berada di sebelah kanan atas layar\n2. Masukkan identitas berupa nama, email aktif, dan password yang akan dipakai\n3. Pada kolom Confirm Password, masukkan ulang password yang akan dipakai\n4. Klik tombol biru yang bertuliskan Register\n5. Selamat! Kamu sudah terdaftar di NECIS",
-                "1. Klik Login yang berada di sebelah kanan atas layar\n2. Masukkan email dan password yang telah didaftarkan\n3. Klik Login Now\n4. Selamat! anda dapat berbelanja di NECIS",
-                "1. Pada tampilan login, dibawah tombol Login now terdapat tulisan I forgot my password\n2. Klik tulisan tersebut\n3. Setelah itu akan ada perintah untuk memasukkan email\n4. Masukkan email anda yang telah terdaftar\n5. Klik tombol Send Password Reset Link\n6. Ikuti langkah-langkah pada pesan yang telah dikirim melalui email."
+                "1. Klik tulisan Daftar yang berada di sebelah kanan atas layar\n2. Masukkan identitas berupa nama, email aktif, dan kata sandi yang akan dipakai\n3. Pada kolom Konfimasi Kata Sandi, masukkan ulang kata sandi yang akan dipakai\n4. Klik tombol yang bertuliskan Daftar\n5. Selamat! Kamu sudah terdaftar di NECIS",
+                "1. Klik Masuk yang berada di sebelah kanan atas layar\n2. Masukkan email dan kata sandi yang telah didaftarkan\n3. Klik Masuk\n4. Selamat! anda dapat berbelanja di NECIS",
+                "1. Pada tampilan Masuk, dibawah tombol Masuk terdapat tulisan Lupa kata sandi\n2. Klik tulisan tersebut\n3. Setelah itu akan ada perintah untuk memasukkan email\n4. Masukkan email anda yang telah terdaftar\n5. Klik tombol Kirim Permintaan Reset Kata Sandi\n6. Ikuti langkah-langkah pada pesan yang telah dikirim melalui email."
             ],
             howModalCall : "#howModal",
             howModal : "howModal"
@@ -29,10 +29,10 @@ class How extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>How? - Necis</title>
+                    <title>Bantuan - Necis</title>
                 </Helmet>
 
-                <CoverA name="How" info="Frequently Asked Question"/>
+                <CoverA name="Bantuan" info="Soal Sering Ditanyakan"/>
 
                 {/* Content */}
                 {/* <h3>How necis deliver your danus?</h3> */}
@@ -69,7 +69,7 @@ class How extends Component {
                                             {this.state.answer[index]}
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                                         </div>
                                         </div>
                                     </div>

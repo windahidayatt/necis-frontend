@@ -29,10 +29,10 @@ class Event extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Event - Necis</title>
+                    <title>Acara - Necis</title>
                 </Helmet>
 
-                <CoverA name="Events" info="Nearest events this year!"/>
+                <CoverA name="Acara" info="Acara terdekat di tahun ini!"/>
 
                 <div className="container-fluid">
                     <div className="row mt-4">

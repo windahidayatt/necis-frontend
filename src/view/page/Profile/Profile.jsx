@@ -24,10 +24,10 @@ class Profile extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>About - Necis</title>
+                    <title>Tentang - Necis</title>
                 </Helmet>
 
-                <CoverA name="About Us" info="Know us better!"/>
+                <CoverA name="Tentang Necis" info="Yuk kenalan lebih dekat!"/>
 
                 {/* Content */}
                 {/* <h1>Profile NECIS</h1> */}
@@ -36,7 +36,7 @@ class Profile extends Component {
                         <div className="row mb-2 justify-content-center">
                             <div className="col-md-8 text-center">
                                 {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 className="h2 text-black site-section-heading text-center"><b>HISTORY</b> OF NECIS</h2>
+                                <h2 className="h2 text-black site-section-heading text-center"><b>SEJARAH</b> NECIS</h2>
                                 <hr />
                             </div>
                             <div className="col-md-10 text-justify">
@@ -52,7 +52,7 @@ class Profile extends Component {
                         <div className="row mb-2 justify-content-center">
                             <div className="col-md-8 text-center">
                                 {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 className="h2 text-black site-section-heading text-center">MEET OUR <b>TEAM</b></h2>
+                                <h2 className="h2 text-black site-section-heading text-center"><b>TIM</b> KAMI</h2>
                                 <hr />
                             </div>
                         </div>

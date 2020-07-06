@@ -48,7 +48,7 @@ class Home extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Home - Necis</title>
+                    <title>Beranda - Necis</title>
 
                 </Helmet>
 
@@ -68,11 +68,11 @@ class Home extends Component {
                     <div className="row align-items-center justify-content-center text-center">
                         <div className="col-lg-12 col-12"  data-aos="fade-up" data-aos-delay="400">
                             <div className="col-md-12 text-center text-judul">
-                                <div className="masthead-subheading lead" data-aos="fade-up"><b>Welcome to NECIS</b></div>
-                                <div className="masthead-heading text-uppercase lead" data-aos="fade-up" data-aos-delay="400">DANUS FOR LYFE</div>
+                                <div className="masthead-subheading lead" data-aos="fade-up"><b>Selamat datang di NECIS!</b></div>
+                                <div className="masthead-heading text-uppercase lead" data-aos="fade-up" data-aos-delay="400">DANUSAN KUY!</div>
                                 <div className="col-12 text-center mt-5" data-aos="fade-up">
                                     {/* <a href="#" className="btn btn-secondary btn-md">SHOP NOW</a> */}
-                                    <Link to='/product' className='btn btn-secondary px-4'>SHOP NOW !</Link>
+                                    <Link to='/product' className='btn btn-secondary px-4'>LIHAT PRODUK</Link>
                                 </div> 
                             </div>
                         </div>
@@ -86,9 +86,9 @@ class Home extends Component {
                         <div className="row mb-2 justify-content-center">
                             <div className="col-md-8 text-center">
                                 {/* <h2 className="h2 text-black site-section-heading text-center"><b>{this.state.title}</b></h2> */}
-                                <h2 className="h2 text-black site-section-heading text-center"><b>NEAREST</b> EVENT</h2>
+                                <h2 className="h2 text-black site-section-heading text-center">EVENT<b> TERDEKAT</b></h2>
                                 <hr />
-                                <p className="lead">Six nearest event to come!</p>
+                                <p className="lead">Acara yang bentar lagi bakal diselenggarakan!</p>
                             </div>
                         </div>
                         <div className="row mb-3 justify-content-center">
@@ -151,7 +151,7 @@ class Home extends Component {
                             {this.state.list_event.map((u, index) =>
                                 index < 6 &&
                                 <div className="col-md-6 col-lg-4 col-6" data-aos="fade-up">
-                                    <a href="#" className="media-1" data-toggle="modal" data-target="{{'#projectModal'.$key}}">
+                                    <Link to={`/event/detail/${u.slug}`} className="media-1">
                                         <img src={this.state.pict_event + u.cover} alt="Image" className="img-fluid"></img>
                                         <div className="media-1-content">
                                             <h3 className="mb-2">{u.name}</h3>
@@ -160,12 +160,12 @@ class Home extends Component {
                                                     {u.description}
                                                 </Truncate></span>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             )}
                             <div className="col-12 text-center mt-2" data-aos="fade-up">
                                 {/* <a href="#" className="btn btn-primary btn-md">Show All Events</a> */}
-                                <Link to='/event' className='btn btn-primary px-4'>Show All Events</Link>
+                                <Link to='/event' className='btn btn-primary px-4'>Lihat Semua Event</Link>
                             </div> 
                         </div>
                     </div>
@@ -176,9 +176,9 @@ class Home extends Component {
                     <div className="container">
                         <div className="row mb-2 justify-content-center">
                             <div className="col-md-8 text-center">
-                                <h2 className="h2 text-black site-section-heading text-center"><b>BEST</b> SELLER</h2>
+                                <h2 className="h2 text-black site-section-heading text-center">PRODUK<b> TERLARIS</b></h2>
                                 <hr />
-                                <p className="lead">Best selling products this week!</p>
+                                <p className="lead">Produk dengan penjualan terbanyak minggu ini!</p>
                             </div>
                         </div>
                         <div className="row">
@@ -265,7 +265,7 @@ class Home extends Component {
                             )}    
                             <div className="col-12 text-center mt-2" data-aos="fade-up">
                                 {/* <a href="#" className="btn btn-primary btn-md">Show All Products</a> */}
-                                <Link to='/product' className='btn btn-primary px-4'>Show All Products</Link>
+                                <Link to='/product' className='btn btn-primary px-4'>Lihat Semua Produk</Link>
                             </div> 
                         </div>
                     </div>

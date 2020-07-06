@@ -14,7 +14,7 @@ const PublicLayout = ({children, ...rest}) => {
         <FooterA/>
         {/* <Footer /> */}
       </div>
-    )
+    ) 
   }
 
 export default PublicLayout;

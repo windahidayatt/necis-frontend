@@ -98,8 +98,8 @@ class ProductDetail extends Component {
                                 <div className="s_product_text">
                                     <h3>{this.state.name}</h3>
                                     <h2>Rp{this.state.price}</h2>
-                                    <h6>Category : Food & Beverage</h6>
-                                    <h6>Availability : Ready Stock</h6>
+                                    <h6>Kategori : Makanan & Minuman</h6>
+                                    <h6>Ketersediaan : Stok tersedia</h6>
                                     <p>{this.state.description}</p>
                                     <div className="product_count mt-3">
                                         <label for="qty">Quantity:</label>
@@ -116,7 +116,7 @@ class ProductDetail extends Component {
                                             </div>
                                     
                                         </div>
-                                        <button className="btn btn-primary" onClick={this.handleAddtoCart}>Add to Cart</button>          
+                                        <button className="btn btn-primary" onClick={this.handleAddtoCart}>Tambah ke Keranjang</button>          
                                     </div>
                                 </div>
                             </div>

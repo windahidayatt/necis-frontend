@@ -49,7 +49,7 @@ class SignUp extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Sign Up - Necis</title>
+                    <title>Daftar - Necis</title>
                 </Helmet>
 
                 {/* Content */}
@@ -59,26 +59,26 @@ class SignUp extends Component {
                         <div className="col-lg-12 margin-content">
                             <div className="card card-login mt-4 mb-4">
                                 <div className="card-body">
-                                    <h3 className="card-title mb-4">Sign Up</h3>
+                                    <h3 className="card-title mb-4">Daftar</h3>
                                     <form onSubmit={this.handleSubmit}>
                                         <div className="form-group">
-                                            <input type="text" name="name" className="form-control" placeholder="Name" value={this.state.name} onChange={this.handleChange} required></input>
+                                            <input type="text" name="name" className="form-control" placeholder="Nama" value={this.state.name} onChange={this.handleChange} required></input>
                                         </div>
                                         <div className="form-group">
-                                            <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value={this.state.email} onChange={this.handleChange} required></input>
+                                            <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value={this.state.email} onChange={this.handleChange} required></input>
                                         </div>
                                         <div className="form-group">
-                                            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" value={this.state.password} onChange={this.handleChange} required></input>
+                                            <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Kata Sandi" value={this.state.password} onChange={this.handleChange} required></input>
                                         </div>
                                         <div className="form-group">
-                                            <input type="password" name="password_confirmation" className="form-control" id="exampleInputPassword1" placeholder="Confirm Password" value={this.state.password_confirmation} onChange={this.handleChange} required></input>
+                                            <input type="password" name="password_confirmation" className="form-control" id="exampleInputPassword1" placeholder="Konfirmasi Kata Sandi" value={this.state.password_confirmation} onChange={this.handleChange} required></input>
                                         </div>
                                         <div className="form-group">
                                             <input type="hidden" name="status" className="form-control" value={this.state.status} ></input>
                                         </div>
-                                        <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Sign Up</button>
-                                        <Link to='/sign-up' className="link-custom link1-custom mt-3">Sign Up as a store</Link>
-                                        <Link to='/login' className="link-custom link2-custom mt-3">Already Have Account? Login</Link>
+                                        <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Daftar</button>
+                                        <Link to='/sign-up' className="link-custom link1-custom mt-3">Daftar sebagai Toko</Link>
+                                        <Link to='/login' className="link-custom link2-custom mt-3">Sudah punya akun? Masuk</Link>
                                     </form>
                                 </div>
                             </div>

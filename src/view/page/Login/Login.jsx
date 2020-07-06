@@ -57,7 +57,7 @@ class Login extends Component {
                 {/* Title */}
                 <Helmet>
                     <meta charSet="utf-8" />
-                    <title>Login - Necis</title>
+                    <title>Masuk - Necis</title>
                 </Helmet>
 
                 {/* Content */}
@@ -71,17 +71,17 @@ class Login extends Component {
                             <div className="col-lg-12 margin-content">
                                 <div className="card card-login mt-4 mb-4">
                                     <div className="card-body">
-                                        <h3 className="card-title mb-4">Login</h3>
+                                        <h3 className="card-title mb-4">Masuk</h3>
                                         <form onSubmit={this.handleSubmit}>
                                             <div className="form-group">
-                                                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" value={this.state.email} onChange={this.handleChange} required></input>
+                                                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value={this.state.email} onChange={this.handleChange} required></input>
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Password" value={this.state.password} onChange={this.handleChange} required></input>
+                                                <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Kata Sandi" value={this.state.password} onChange={this.handleChange} required></input>
                                             </div>
-                                            <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Login</button>
-                                            <Link to='/login' className="link-custom link1-custom mt-3">Login as a store</Link>
-                                            <Link to='/login' className="link-custom link2-custom mt-3">Forgot Password?</Link>
+                                            <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Masuk</button>
+                                            <Link to='/login' className="link-custom link1-custom mt-3">Masuk sebagai Toko</Link>
+                                            <Link to='/login' className="link-custom link2-custom mt-3">Lupa Kata Sandi</Link>
                                         </form>
                                     </div>
                                 </div>

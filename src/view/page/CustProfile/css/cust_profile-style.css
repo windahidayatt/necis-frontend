@@ -1,12 +1,21 @@
-.h4-profile-title{
-    color : #646464 !important;
+.h5-profile-title{
+    color : #646464af !important;
     padding-top : 0.6em;
 }
 .h4-profile-value{
     color : #49654e !important;
-    padding-top : 0.6em;
+    padding-top : 0.1em;
 }
 .row-profile{
     background-color: rgba(241, 241, 241, 0.575) !important;
     border-radius: 10px;
+}
+
+@media (max-width: 547px) {
+    .h5-profile-title{
+        font-size: 0.8em;
+    }
+    .h4-profile-value{
+        font-size: 1em;
+    }
 }

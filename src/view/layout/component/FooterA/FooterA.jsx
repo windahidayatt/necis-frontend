@@ -33,21 +33,21 @@ class FooterA extends Component {
             <div className="container-fluid site-footer">
             <div className="row">
                 <div className="col-md-6 mb-md-0">
-                    <h3 className="footer-heading mb-4 text-white">ABOUT NECIS</h3>
+                    <h3 className="footer-heading mb-4 text-white">TENTANG NECIS</h3>
                     <p>{this.state.about}</p>
                     {/* <p><a href="{{route('about')}}" className="btn btn-secondary px-4">Read more...</a></p> */}
-                    <p><Link to='/profile' className='btn btn-secondary px-4'>Read more...</Link></p>
+                    <p><Link to='/profile' className='btn btn-secondary px-4'>Baca Selengkapnya...</Link></p>
                 </div>
                 <div className="col-md-2"></div>
                 <div className="col-md-4">
                     <div className="row">
-                        <div className="col-md-12"><h3 className="footer-heading mb-4 text-white">CONTACT</h3></div>
+                        <div className="col-md-12"><h3 className="footer-heading mb-4 text-white">KONTAK</h3></div>
                             <div className="col-md-12">
                                 <div className="p">
-                                    <p className="mb-0 font-weight-bold">Address</p>
-                                    <p className="mb-4">Gegerkalong Hilir Street, Ciwaruga.</p>
+                                    <p className="mb-0 font-weight-bold">Alamat</p>
+                                    <p className="mb-4">Jalan Gegerkalong Hilir, Ciwaruga.</p>
                     
-                                    <p className="mb-0 font-weight-bold">Telephone</p>
+                                    <p className="mb-0 font-weight-bold">Telepon</p>
                                     <p className="mb-4">+62 877-1424-8000 (Lisa)</p>
                     
                                     <p className="mb-0 font-weight-bold">E-mail</p>
