@@ -146,7 +146,7 @@ class CustProfile extends Component {
                                                     <hr/> */}
                                                     <form onSubmit={this.handleSubmit}>
                                                         <div className="form-group">
-                                                            <input type="hidden" name="_token" value="csrf_token" />
+                                                            <input type="hidden" name="_token" value={this.state._token} />
                                                         </div>
                                                         <div className="form-group">
                                                             <input type="hidden" name="status" className="form-control" value={this.state.status}></input>
