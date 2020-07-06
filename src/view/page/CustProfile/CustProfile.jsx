@@ -10,6 +10,7 @@ class CustProfile extends Component {
         
         this.state = {
             account:"",
+            list_addresses:[],
             _token : "",
             status : "1",
             alias : "",
@@ -26,6 +27,7 @@ class CustProfile extends Component {
     }
 
     handleChange(event){
+        console.log(this.state.list_addresses)
         this.setState({
             [event.target.name] : event.target.value
         })
@@ -48,22 +50,23 @@ class CustProfile extends Component {
         }
 
         POST_ADDRESS(this.state.account.id,newAddress).then(res =>{
-            console.log(res);
-            this.props.history.push('/cust-profile');
+            // this.props.history.push('/profile');
+            window.location.reload(false);
         })
     }
 
     componentDidMount(){
         const jwt = localStorage.getItem('custtoken');
-        console.log(jwt);
+        // console.log(jwt);
         if(!jwt){
             this.props.history.push('/login');
         }
         GET_ACCOUNT().then(res => {
-            console.log(res[3])
+            console.log(res[0])
             this.setState({
                 account:res[0],
-                _token:res[3]
+                _token:res[3],
+                list_addresses : res[0].addresses
             })
         }).catch(err => {
             this.props.history.push('/login');
@@ -108,10 +111,11 @@ class CustProfile extends Component {
                                                 <div className="col-lg-6 col-12 text-left">
                                                     <h5 className="h5-profile-title">Alamat</h5>
                                                     <hr style={{marginTop:0}}/>
-                                                    {this.state.CustAddress.map((u, index) =>
+                                                    {this.state.list_addresses.map((u, index) =>
                                                         <div>
                                                             <div className="row">
                                                                 <div className="col-2">
+                                                                    <p style={{margin:0}}>Alias</p>
                                                                     <p style={{margin:0}}>Alamat</p>
                                                                     <p style={{margin:0}}>Telepon</p>
                                                                 </div>
@@ -120,8 +124,9 @@ class CustProfile extends Component {
                                                                     <p style={{margin:0}}>:</p>
                                                                 </div>
                                                                 <div className="col-lg-9 col-4">
-                                                                    <p style={{margin:0}}>{u.alamat}</p>
-                                                                    <p style={{margin:0}}>{u.telepon}</p>
+                                                                    <p style={{margin:0}}>{u.alias}</p>
+                                                                    <p style={{margin:0}}>{u.address_1}</p>
+                                                                    <p style={{margin:0}}>{u.phone}</p>
                                                                 </div>
                                                             </div>
                                                             <hr/>
