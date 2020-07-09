@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {Helmet} from "react-helmet";
 import {Link} from 'react-router-dom';
-import { GET_LIST_CART } from '../../../controller/CartController';
+import { GET_LIST_CART, UPDATE_CART_ITEM, DELETE_CART_ITEM } from '../../../controller/CartController';
 import withSizes from 'react-sizes';
+import update from 'react-addons-update';
 import './css/cart-style.css';
 import kripca from './assets/kripca.png';
 import risol from './assets/risol.jpg';
@@ -16,8 +17,56 @@ class Cart extends Component {
         super(props);
         this.state = {
             list_cart:[],
-            total : ''
+            total : '',
+            rowId : '',
+            qty : ''
         }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleUpdateCart = this.handleUpdateCart.bind(this);
+        this.handleDeleteCartItem = this.handleDeleteCartItem.bind(this);
+
+    }
+
+    handleChange(event, rowId, index){
+        this.setState({
+            list_cart: update(this.state.list_cart, {[index]: {qty: {$set: event.target.value}}}),
+            rowId : rowId
+        })
+    }
+
+    handleDeleteCartItem(event, rowId){
+        event.preventDefault();
+        
+        const deleteItem = {
+            rowId : rowId,
+            _method : "delete"
+        }
+
+        DELETE_CART_ITEM(deleteItem).then(res =>{
+            window.location.reload(false);
+        })
+    }
+
+    handleUpdateCart(event, rowId, qty){
+        event.preventDefault();
+        
+        // this.setState({
+        //     rowId : rowId,
+        //     qty : qty
+        // })
+
+        const newItem = {
+            rowId : rowId,
+            quantity : qty,
+            _method : "put"
+        }
+
+        console.log(newItem.quantity)
+
+        UPDATE_CART_ITEM(newItem).then(res =>{
+            console.log(res);
+            // this.props.history.push('/cart');
+        })
     }
 
     componentDidMount(){
@@ -122,19 +171,21 @@ class Cart extends Component {
                                         </td>
                                         <td>Rp{u.price}.00</td>
                                         <td>
-                                            <div className="input-group quantity-td">
-                                                <div className="input-group-prepend">
-                                                <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                <div className="input-group quantity-td">
+                                                    {/* <div className="input-group-prepend">
+                                                        <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                    </div> */}
+                                                    <input type="text" className="form-control text-center border mr-0" defaultValue={u.qty} onChange={(e) => {this.handleChange(e, u.rowId, index)}}></input>
+                                                    <div className="input-group-append">
+                                                        {/* <button className="btn btn-primary" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, u.qty)}}>&#43;</button> */}
+                                                        <button className="btn btn-primary btn-sm" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, this.state.list_cart[index].qty)}}>Update</button>
+                                                    </div>
                                                 </div>
-                                                <input type="text" className="form-control text-center border mr-0" value={u.qty} placeholder=""
-                                                aria-label="Example text with button addon" aria-describedby="button-addon1"></input>
-                                                <div className="input-group-append">
-                                                <button className="btn btn-primary js-btn-plus" type="button">&#43;</button>
-                                                </div>
-                                            </div>
                                         </td>
                                         <td>Rp{u.price*u.qty}.00</td>
-                                        <td><a href="#" className="btn btn-primary height-auto btn-sm">X</a></td>
+                                        <td>
+                                            <button className="btn btn-primary height-auto btn-sm" type="button" onClick={(e) => {this.handleDeleteCartItem(e, u.rowId)}}>X</button>
+                                        </td>
                                     </tr>
                                     )}
                                     </tbody>
