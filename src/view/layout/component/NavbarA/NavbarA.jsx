@@ -4,8 +4,24 @@ import { Link, NavLink } from 'react-router-dom';
 import '../../../../../node_modules/font-awesome/css/font-awesome.min.css'; 
 import logo from './assets/logo-necis2.jpeg';
 import {isLogin} from './../../../../utils/Utils'
+import Search from '../../../page/Search/Search';
 
 class NavbarA extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            q : ""
+        }
+        this.handleChange = this.handleChange.bind(this);
+
+    }
+
+    handleChange(event){
+        this.setState({
+            [event.target.name] : event.target.value
+        })
+    }
+
     render() {
         return (
             <div>
@@ -67,11 +83,12 @@ class NavbarA extends Component {
                                 }
                             </li>
                         </ul>
-                        <form className="form-inline ml-auto mb-2">
+                        <form className="form-inline ml-auto mb-2" action="javascript:void(-1)">
                             <div className="input-group">
-                                <input type="text" className="form-control border-dark" placeholder="Cari..."></input>
+                                <input type="text" className="form-control border-dark" name="q" placeholder="Cari..." onChange={this.handleChange} value={this.state.q}></input>
                                 <div className="input-group-append">
-                                    <button className="btn btn-primary" type="button"><i className="fa fa-search" aria-hidden="true"></i></button>
+                                    <Link to={{pathname: "/search", q: this.state.q}} className='btn btn-primary'><i className="fa fa-search" aria-hidden="true"></i></Link>
+                                    {/* <button className="btn btn-primary" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button> */}
                                 </div>
                             </div>
                         </form>

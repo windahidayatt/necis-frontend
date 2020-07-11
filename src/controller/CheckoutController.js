@@ -32,11 +32,11 @@ export const POST_CHECKOUT = newOrder => {
             {headers: { Authorization: `Bearer ${localStorage.custtoken}` }, withCredentials:true}
             )
         .then(response => {
-            console.log("CHECKOUT SUCCESS")
+            // console.log("CHECKOUT SUCCESS")
             return response.data
         })
         .catch(err => {
-            console.log("CHECKOUT ERR")
+            // console.log("CHECKOUT ERR")
             return err.response
         })
 }

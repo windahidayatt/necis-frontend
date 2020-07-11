@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Helmet} from 'react-helmet';
 import './css/login-style.css';
 import { Link } from 'react-router-dom';
-import {LOGIN_CUSTOMER} from '../../../controller/LoginController';
+import {LOGIN_CUSTOMER, LOGOUT_CUSTOMER} from '../../../controller/LoginController';
 import {isLogin} from './../../../utils/Utils'
 
 
@@ -43,11 +43,13 @@ class Login extends Component {
     }
 
     logOut() {
-        
-        console.log(localStorage.getItem('custtoken'));
+        LOGOUT_CUSTOMER().then(res => {
+            console.log(res)
+            // this.setState({
+            //     list_product:res
+            // })
+        })
         localStorage.removeItem('custtoken');
-        console.log(localStorage.getItem('custtoken'));
-
         this.props.history.push('/login');
     }
 
@@ -74,10 +76,10 @@ class Login extends Component {
                                         <h3 className="card-title mb-4">Masuk</h3>
                                         <form onSubmit={this.handleSubmit}>
                                             <div className="form-group">
-                                                <input type="email" name="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-mail" value={this.state.email} onChange={this.handleChange} required></input>
+                                                <input type="email" name="email" className="form-control" aria-describedby="emailHelp" placeholder="E-mail" value={this.state.email} onChange={this.handleChange} required></input>
                                             </div>
                                             <div className="form-group">
-                                                <input type="password" name="password" className="form-control" id="exampleInputPassword1" placeholder="Kata Sandi" value={this.state.password} onChange={this.handleChange} required></input>
+                                                <input type="password" name="password" className="form-control" placeholder="Kata Sandi" value={this.state.password} onChange={this.handleChange} required></input>
                                             </div>
                                             <button type="submit" className="btn btn-primary btn-lg btn-block mt-4 mb-2">Masuk</button>
                                             <Link to='/login' className="link-custom link1-custom mt-3">Masuk sebagai Toko</Link>
