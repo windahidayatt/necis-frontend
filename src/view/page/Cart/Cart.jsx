@@ -119,13 +119,15 @@ class Cart extends Component {
                                     <div className="row mt-4">
                                         <div className="col-8">
                                             <div className="input-group mb-3 quantity-td">
-                                                <div className="input-group-prepend">
-                                                    <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
-                                                </div>
-                                                    <input type="text" className="form-control text-center border mr-0" value={u.qty} placeholder=""
-                                                    aria-label="Example text with button addon" aria-describedby="button-addon1"></input>
-                                                <div className="input-group-append">
-                                                    <button className="btn btn-primary js-btn-plus" type="button">&#43;</button>
+                                                <div className="input-group quantity-td">
+                                                    {/* <div className="input-group-prepend">
+                                                        <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                    </div> */}
+                                                    <input type="text" className="form-control text-center border mr-0" defaultValue={u.qty} onChange={(e) => {this.handleChange(e, u.rowId, index)}}></input>
+                                                    <div className="input-group-append">
+                                                        {/* <button className="btn btn-primary" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, u.qty)}}>&#43;</button> */}
+                                                        <button className="btn btn-primary btn-sm" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, this.state.list_cart[index].qty)}}>Update</button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -171,20 +173,20 @@ class Cart extends Component {
                                         </td>
                                         <td>Rp{u.price}.00</td>
                                         <td>
-                                                <div className="input-group quantity-td">
-                                                    {/* <div className="input-group-prepend">
-                                                        <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
-                                                    </div> */}
-                                                    <input type="text" className="form-control text-center border mr-0" defaultValue={u.qty} onChange={(e) => {this.handleChange(e, u.rowId, index)}}></input>
-                                                    <div className="input-group-append">
-                                                        {/* <button className="btn btn-primary" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, u.qty)}}>&#43;</button> */}
-                                                        <button className="btn btn-primary btn-sm" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, this.state.list_cart[index].qty)}}>Update</button>
-                                                    </div>
+                                            <div className="input-group quantity-td">
+                                                {/* <div className="input-group-prepend">
+                                                    <button className="btn btn-primary js-btn-minus" type="button">&#8722;</button>
+                                                </div> */}
+                                                <input type="text" className="form-control text-center border mr-0" defaultValue={u.qty} onChange={(e) => {this.handleChange(e, u.rowId, index)}}></input>
+                                                <div className="input-group-append">
+                                                    {/* <button className="btn btn-primary" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, u.qty)}}>&#43;</button> */}
+                                                    <button className="btn btn-primary btn-sm" type="button" onClick={(e) => {this.handleUpdateCart(e, u.rowId, this.state.list_cart[index].qty)}}>Update</button>
                                                 </div>
+                                            </div>
                                         </td>
                                         <td>Rp{u.price*u.qty}.00</td>
                                         <td>
-                                            <button className="btn btn-primary height-auto btn-sm" type="button" onClick={(e) => {this.handleDeleteCartItem(e, u.rowId)}}>X</button>
+                                            <button className="btn btn-secondary height-auto btn-sm" type="button" onClick={(e) => {this.handleDeleteCartItem(e, u.rowId)}}>X</button>
                                         </td>
                                     </tr>
                                     )}

@@ -122,8 +122,9 @@ class CustProfile extends Component {
                                                                 <div className="col-1">
                                                                     <p style={{margin:0}}>:</p>
                                                                     <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
                                                                 </div>
-                                                                <div className="col-lg-9 col-4">
+                                                                <div className="col-lg-9 col-8">
                                                                     <p style={{margin:0}}>{u.alias}</p>
                                                                     <p style={{margin:0}}>{u.address_1}</p>
                                                                     <p style={{margin:0}}>{u.phone}</p>
@@ -186,8 +187,78 @@ class CustProfile extends Component {
                                     </div>
                                     <div className="tab-pane fade" id="nav-fnb" role="tabpanel" aria-labelledby="nav-fnb-tab">       
                                         <div className="container">
-                                            <div className="row mt-4 row-profile tetc-center">
-                                                <h4 className="h4-profile-title">PESANAN</h4> 
+                                            <div className="row mt-4 row-profile text-center">
+                                                <div className="col-lg-6 col-12 text-left">
+                                                    <h5 className="h5-profile-title">Hari Ini (9 Juli 2020)</h5>
+                                                    <hr style={{marginTop:0}}/>
+                                                    <div className="row">
+                                                        <div className="col-lg-4 col-2">
+                                                            <p style={{margin:0}}>Alamat</p>
+                                                            <p style={{margin:0}}>Total</p>
+                                                            <p style={{margin:0}}>Produk</p>
+                                                        </div>
+                                                        <div className="col-lg-1 col-1">
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                        </div>
+                                                        <div className="col-lg-7 col-8">
+                                                            <p style={{margin:0}}>Gedung A (0892314333)</p>
+                                                            <p style={{margin:0}}>Rp11000.00</p>
+                                                            <p style={{margin:0}}>Dadar Vla x2 Rp4000.00</p>
+                                                            <p style={{margin:0}}>Thai Tea x1 Rp7000.00</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                </div>
+                                                <div className="col-lg-6 col-12 text-left">
+                                                    <h5 className="h5-profile-title">Yang Lalu</h5>
+                                                    <hr style={{marginTop:0}}/>
+                                                    <div className="row">
+                                                        <div className="col-lg-4 col-2">
+                                                            <p style={{margin:0}}>Tanggal</p>
+                                                            <p style={{margin:0}}>Alamat</p>
+                                                            <p style={{margin:0}}>Total</p>
+                                                            <p style={{margin:0}}>Produk</p>
+                                                        </div>
+                                                        <div className="col-lg-1 col-1">
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                        </div>
+                                                        <div className="col-lg-7 col-8">
+                                                            <p style={{margin:0}}>12 Juni 2020</p>
+                                                            <p style={{margin:0}}>Gedung A (0892314333)</p>
+                                                            <p style={{margin:0}}>Rp11000.00</p>
+                                                            <p style={{margin:0}}>Dadar Vla x2 Rp4000.00</p>
+                                                            <p style={{margin:0}}>Thai Tea x1 Rp7000.00</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                    <div className="row">
+                                                        <div className="col-lg-4 col-2">
+                                                            <p style={{margin:0}}>Tanggal</p>
+                                                            <p style={{margin:0}}>Alamat</p>
+                                                            <p style={{margin:0}}>Total</p>
+                                                            <p style={{margin:0}}>Produk</p>
+                                                        </div>
+                                                        <div className="col-lg-1 col-1">
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                            <p style={{margin:0}}>:</p>
+                                                        </div>
+                                                        <div className="col-lg-7 col-8">
+                                                            <p style={{margin:0}}>10 Juni 2020</p>
+                                                            <p style={{margin:0}}>Gedung B (08324733112)</p>
+                                                            <p style={{margin:0}}>Rp5000.00</p>
+                                                            <p style={{margin:0}}>Kripik Kaca x1 Rp5000.00</p>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
