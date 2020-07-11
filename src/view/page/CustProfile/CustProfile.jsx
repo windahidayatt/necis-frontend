@@ -61,7 +61,7 @@ class CustProfile extends Component {
             this.props.history.push('/login');
         }
         GET_ACCOUNT().then(res => {
-            // console.log(res[0])
+            console.log(res)
             this.setState({
                 account:res[0],
                 _token:res[3],
