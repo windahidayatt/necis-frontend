@@ -19,7 +19,8 @@ class CustProfile extends Component {
             country_id : "100",
             zip : "",
             phone : "",
-            CustAddress : [{alamat : "Gedung C", telepon : "081234324324"}, {alamat : "Gedung D", telepon : "089732646325"}]
+            list_orders:[],
+            date_today : ""
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -61,14 +62,21 @@ class CustProfile extends Component {
             this.props.history.push('/login');
         }
         GET_ACCOUNT().then(res => {
-            console.log(res)
+            console.log(res[1])
             this.setState({
                 account:res[0],
                 _token:res[3],
-                list_addresses : res[0].addresses
+                list_addresses : res[0].addresses,
+                list_orders : res[1]
             })
         }).catch(err => {
             this.props.history.push('/login');
+        })
+
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        this.setState({
+            date_today : date
         })
     }
     render() {
@@ -187,76 +195,63 @@ class CustProfile extends Component {
                                     <div className="tab-pane fade" id="nav-fnb" role="tabpanel" aria-labelledby="nav-fnb-tab">       
                                         <div className="container">
                                             <div className="row mt-4 row-profile text-center">
+                                                
                                                 <div className="col-lg-6 col-12 text-left">
-                                                    <h5 className="h5-profile-title">Hari Ini (9 Juli 2020)</h5>
+                                                    <h5 className="h5-profile-title">Hari Ini ({this.state.date_today})</h5>
                                                     <hr style={{marginTop:0}}/>
-                                                    <div className="row">
-                                                        <div className="col-lg-4 col-2">
-                                                            <p style={{margin:0}}>Alamat</p>
-                                                            <p style={{margin:0}}>Total</p>
-                                                            <p style={{margin:0}}>Produk</p>
+                                                    {this.state.list_orders.map((u) =>
+                                                        u.created_at.slice(0, 10) === this.state.date_today &&
+                                                        <div>
+                                                            <div className="row">
+                                                                <div className="col-lg-4 col-2">
+                                                                    <p style={{margin:0}}>Alamat</p>
+                                                                    <p style={{margin:0}}>Total</p>
+                                                                    <p style={{margin:0}}>Status</p>
+                                                                </div>
+                                                                <div className="col-lg-1 col-1">
+                                                                    <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
+                                                                </div>
+                                                                <div className="col-lg-7 col-8">
+                                                                    <p style={{margin:0}}>{u.address.address_1} ({u.address.phone})</p>
+                                                                    <p style={{margin:0}}>Rp{u.total}</p>
+                                                                    <p style={{margin:0}}>{u.status.name}</p>
+                                                                </div>
+                                                            </div>
+                                                            <hr/>
                                                         </div>
-                                                        <div className="col-lg-1 col-1">
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                        </div>
-                                                        <div className="col-lg-7 col-8">
-                                                            <p style={{margin:0}}>Gedung A (0892314333)</p>
-                                                            <p style={{margin:0}}>Rp11000.00</p>
-                                                            <p style={{margin:0}}>Dadar Vla x2 Rp4000.00</p>
-                                                            <p style={{margin:0}}>Thai Tea x1 Rp7000.00</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr/>
+                                                    )}
                                                 </div>
                                                 <div className="col-lg-6 col-12 text-left">
                                                     <h5 className="h5-profile-title">Yang Lalu</h5>
                                                     <hr style={{marginTop:0}}/>
-                                                    <div className="row">
-                                                        <div className="col-lg-4 col-2">
-                                                            <p style={{margin:0}}>Tanggal</p>
-                                                            <p style={{margin:0}}>Alamat</p>
-                                                            <p style={{margin:0}}>Total</p>
-                                                            <p style={{margin:0}}>Produk</p>
+                                                    {this.state.list_orders.map((u) =>
+                                                        u.created_at.slice(0, 10) !== this.state.date_today &&
+                                                        <div>
+                                                            <div className="row">
+                                                                <div className="col-lg-4 col-2">
+                                                                    <p style={{margin:0}}>Tanggal</p>
+                                                                    <p style={{margin:0}}>Alamat</p>
+                                                                    <p style={{margin:0}}>Total</p>
+                                                                    <p style={{margin:0}}>Status</p>
+                                                                </div>
+                                                                <div className="col-lg-1 col-1">
+                                                                    <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
+                                                                    <p style={{margin:0}}>:</p>
+                                                                </div>
+                                                                <div className="col-lg-7 col-8">
+                                                                    <p style={{margin:0}}>{u.created_at.slice(0, 10)}</p>
+                                                                    <p style={{margin:0}}>{u.address.address_1} ({u.address.phone})</p>
+                                                                    <p style={{margin:0}}>Rp{u.total}</p>
+                                                                    <p style={{margin:0}}>{u.status.name}</p>
+                                                                </div>
+                                                            </div>
+                                                            <hr/>
                                                         </div>
-                                                        <div className="col-lg-1 col-1">
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                        </div>
-                                                        <div className="col-lg-7 col-8">
-                                                            <p style={{margin:0}}>12 Juni 2020</p>
-                                                            <p style={{margin:0}}>Gedung A (0892314333)</p>
-                                                            <p style={{margin:0}}>Rp11000.00</p>
-                                                            <p style={{margin:0}}>Dadar Vla x2 Rp4000.00</p>
-                                                            <p style={{margin:0}}>Thai Tea x1 Rp7000.00</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr/>
-                                                    <div className="row">
-                                                        <div className="col-lg-4 col-2">
-                                                            <p style={{margin:0}}>Tanggal</p>
-                                                            <p style={{margin:0}}>Alamat</p>
-                                                            <p style={{margin:0}}>Total</p>
-                                                            <p style={{margin:0}}>Produk</p>
-                                                        </div>
-                                                        <div className="col-lg-1 col-1">
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                            <p style={{margin:0}}>:</p>
-                                                        </div>
-                                                        <div className="col-lg-7 col-8">
-                                                            <p style={{margin:0}}>10 Juni 2020</p>
-                                                            <p style={{margin:0}}>Gedung B (08324733112)</p>
-                                                            <p style={{margin:0}}>Rp5000.00</p>
-                                                            <p style={{margin:0}}>Kripik Kaca x1 Rp5000.00</p>
-                                                        </div>
-                                                    </div>
-                                                    <hr/>
-
+                                                    )}
                                                 </div>
                                             </div>
                                         </div>

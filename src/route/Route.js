@@ -17,7 +17,7 @@ import SignUp from '../view/page/SignUp/SignUp';
 import Cart from '../view/page/Cart/Cart';
 import CustProfile from '../view/page/CustProfile/CustProfile';
 import Checkout from '../view/page/Checkout/Checkout';
-
+import Search from '../view/page/Search/Search';
 
 
 const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
@@ -57,6 +57,9 @@ const AppRoute = ({component = Component, layout: Layout, ...rest}) => (
 
                 {/* Checkout Route */}
                 <PublicRoute path="/checkout" component={Checkout}/>
+
+                {/* Search Route */}
+                <PublicRoute path="/search" component={Search}/>
             </Switch>
         </div>
     </Router>
