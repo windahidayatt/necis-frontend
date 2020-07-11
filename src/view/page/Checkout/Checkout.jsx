@@ -63,8 +63,8 @@ class Checkout extends Component {
         }
 
         POST_CHECKOUT(newOrder).then(res =>{
-            console.log(res);
-            // this.props.history.push('/login');
+            // console.log(res);
+            this.props.history.push('/cust-profile');
         })
     }
 
