@@ -27,7 +27,6 @@ class CustProfile extends Component {
     }
 
     handleChange(event){
-        console.log(this.state.list_addresses)
         this.setState({
             [event.target.name] : event.target.value
         })
@@ -62,7 +61,7 @@ class CustProfile extends Component {
             this.props.history.push('/login');
         }
         GET_ACCOUNT().then(res => {
-            console.log(res[0])
+            // console.log(res[0])
             this.setState({
                 account:res[0],
                 _token:res[3],

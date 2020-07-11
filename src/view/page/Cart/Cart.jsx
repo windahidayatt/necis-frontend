@@ -212,7 +212,7 @@ class Cart extends Component {
                                         <span className="text-black">Subtotal</span>
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <strong className="text-black">{this.state.total}</strong>
+                                        <strong className="text-black">Rp{this.state.total}.00</strong>
                                     </div>
                                 </div>
                                 <div className="row mb-5">
@@ -220,7 +220,7 @@ class Cart extends Component {
                                         <span className="text-black">Total</span>
                                     </div>
                                     <div className="col-md-6 text-right">
-                                        <strong className="text-black">{this.state.total}</strong>
+                                        <strong className="text-black">Rp{this.state.total}.00</strong>
                                     </div>
                                 </div>
                     

@@ -273,7 +273,7 @@ class Checkout extends Component {
                                                     <div className="form-group">
                                                         <input type="hidden" name="shipment_obj_id" className="form-control" value=""></input>
                                                     </div>
-                                                    <button type="submit" className="btn btn-primary btn-lg btn-block">Daftar</button>
+                                                    <button type="submit" className="btn btn-primary btn-lg btn-block">Buat Pesanan</button>
                                                 </form>
                                             </div>
                                         </div>
