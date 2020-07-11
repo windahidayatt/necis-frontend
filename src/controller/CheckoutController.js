@@ -29,7 +29,7 @@ export const POST_CHECKOUT = newOrder => {
                 rate : newOrder.rate,
                 shipment_obj_id : newOrder.shipment_obj_id
             },
-            {headers: { Authorization: `Bearer ${localStorage.custtoken}` }}
+            {headers: { Authorization: `Bearer ${localStorage.custtoken}` }, withCredentials:true}
             )
         .then(response => {
             console.log("CHECKOUT SUCCESS")
