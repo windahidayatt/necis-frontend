@@ -62,7 +62,7 @@ class CustProfile extends Component {
             this.props.history.push('/login');
         }
         GET_ACCOUNT().then(res => {
-            console.log(res[1])
+            console.log(res)
             this.setState({
                 account:res[0],
                 _token:res[3],
@@ -74,7 +74,7 @@ class CustProfile extends Component {
         })
 
         var today = new Date();
-        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var date = today.getFullYear()+'-'+(((today.getMonth() + 1) < 10 ? '0' : '') + (today.getMonth() + 1))+'-'+((today.getDate() < 10 ? '0' : '') + today.getDate());
         this.setState({
             date_today : date
         })
@@ -200,7 +200,7 @@ class CustProfile extends Component {
                                                     <h5 className="h5-profile-title">Hari Ini ({this.state.date_today})</h5>
                                                     <hr style={{marginTop:0}}/>
                                                     {this.state.list_orders.map((u) =>
-                                                        u.created_at.slice(0, 10) === this.state.date_today &&
+                                                        u.created_at.date.slice(0, 10) === this.state.date_today &&
                                                         <div>
                                                             <div className="row">
                                                                 <div className="col-lg-4 col-2">
@@ -227,7 +227,7 @@ class CustProfile extends Component {
                                                     <h5 className="h5-profile-title">Yang Lalu</h5>
                                                     <hr style={{marginTop:0}}/>
                                                     {this.state.list_orders.map((u) =>
-                                                        u.created_at.slice(0, 10) !== this.state.date_today &&
+                                                        u.created_at.date.slice(0, 10) !== this.state.date_today &&
                                                         <div>
                                                             <div className="row">
                                                                 <div className="col-lg-4 col-2">
@@ -243,7 +243,7 @@ class CustProfile extends Component {
                                                                     <p style={{margin:0}}>:</p>
                                                                 </div>
                                                                 <div className="col-lg-7 col-8">
-                                                                    <p style={{margin:0}}>{u.created_at.slice(0, 10)}</p>
+                                                                    <p style={{margin:0}}>{u.created_at.date.slice(0, 10)}</p>
                                                                     <p style={{margin:0}}>{u.address.address_1} ({u.address.phone})</p>
                                                                     <p style={{margin:0}}>Rp{u.total}</p>
                                                                     <p style={{margin:0}}>{u.status.name}</p>
