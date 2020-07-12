@@ -37,14 +37,14 @@ class Login extends Component {
         }
 
         LOGIN_CUSTOMER(cust).then(res =>{
-            console.log(res);
+            // console.log(res);
             this.props.history.push('/cust-profile');
         })
     }
 
     logOut() {
         LOGOUT_CUSTOMER().then(res => {
-            console.log(res)
+            // console.log(res)
             // this.setState({
             //     list_product:res
             // })
