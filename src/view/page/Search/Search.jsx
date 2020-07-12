@@ -49,7 +49,7 @@ class Search extends Component {
                 {/* Title */}
                 <Helmet>
                 <meta charSet="utf-8" />
-                <title>Produk - Necis</title>
+                <title>Cari - Necis</title>
                 </Helmet>
                 <div className="row mt-4 popular-items">
                     {this.state.list_product.map((u, index) =>
